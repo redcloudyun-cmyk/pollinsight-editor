@@ -51,6 +51,15 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
+app.get('/healthz', async (_request, response) => {
+    try {
+        await pool.query('SELECT 1');
+        response.json({ status: 'ok', database: 'ready' });
+    } catch {
+        response.status(503).json({ status: 'unavailable', database: 'not_ready' });
+    }
+});
+
 // 🚀 [보안] 백엔드에서만 API 키를 주입하여 제미나이 클라이언트 초기화
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -241,18 +250,23 @@ async function initializeMembershipStore() {
         console.warn('[AUTH] MySQL membership store unavailable; using local development store:', error.message);
     }
     const shouldSeedDemo = process.env.SEED_DEMO_ACCOUNT === 'true' && process.env.NODE_ENV !== 'production';
-    if (membershipDbReady && shouldSeedDemo) {
-        const [existing] = await pool.query('SELECT id FROM users WHERE email = ? LIMIT 1', ['demo@pollinsight.local']);
-        if (!existing.length) {
-            const password_hash = await hashPassword('Demo!2026');
-            await pool.query("INSERT INTO users (email, password_hash, display_name, party, tier, role) VALUES (?, ?, ?, 'democratic', 'premium', 'admin')", ['demo@pollinsight.local', password_hash, '데모 관리자']);
-            console.log('[AUTH] MySQL demo administrator created.');
+    if (shouldSeedDemo) {
+        const demoPassword = process.env.DEMO_ACCOUNT_PASSWORD;
+        if (!demoPassword || demoPassword.length < 12) {
+            console.warn('[AUTH] Demo account seed skipped: DEMO_ACCOUNT_PASSWORD must contain at least 12 characters.');
+        } else if (membershipDbReady) {
+            const [existing] = await pool.query('SELECT id FROM users WHERE email = ? LIMIT 1', ['demo@pollinsight.local']);
+            if (!existing.length) {
+                const password_hash = await hashPassword(demoPassword);
+                await pool.query("INSERT INTO users (email, password_hash, display_name, party, tier, role) VALUES (?, ?, ?, 'democratic', 'premium', 'admin')", ['demo@pollinsight.local', password_hash, '데모 관리자']);
+                console.log('[AUTH] MySQL demo administrator created.');
+            }
+        } else if (!localStore.users.some(user => user.email === 'demo@pollinsight.local')) {
+            const password_hash = await hashPassword(demoPassword);
+            localStore.users.push({ id: localStore.nextUserId++, email: 'demo@pollinsight.local', password_hash, display_name: '데모 관리자', party: 'democratic', tier: 'premium', role: 'admin', is_active: true, created_at: new Date().toISOString() });
+            saveLocalStore();
+            console.log('[AUTH] Local demo account created.');
         }
-    } else if (!membershipDbReady && !localStore.users.some(user => user.email === 'demo@pollinsight.local')) {
-        const password_hash = await hashPassword('Demo!2026');
-        localStore.users.push({ id: localStore.nextUserId++, email: 'demo@pollinsight.local', password_hash, display_name: '데모 관리자', party: 'democratic', tier: 'premium', role: 'admin', is_active: true, created_at: new Date().toISOString() });
-        saveLocalStore();
-        console.log('[AUTH] Local demo account created.');
     }
 }
 initializeMembershipStore();
