@@ -24,6 +24,15 @@ services:
       retries: 12
       start_period: 30s
 
+  volume-init:
+    image: alpine:3.22
+    user: "0:0"
+    command: ["sh", "-c", "chown -R 1000:1000 /app-data /app-uploads"]
+    volumes:
+      - app-data:/app-data
+      - app-uploads:/app-uploads
+    restart: "no"
+
   app:
     image: ${APP_IMAGE:?APP_IMAGE must identify a validated application image}
     container_name: pollinsight-latest-app
@@ -45,6 +54,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      volume-init:
+        condition: service_completed_successfully
     healthcheck:
       test:
         - CMD
@@ -67,4 +78,3 @@ volumes:
 networks:
   pollinsight-latest:
     name: pollinsight-latest-network
-
