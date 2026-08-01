@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>POLLINSIGHT | 디지털 명함</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    :root{--accent:#2563eb;--ink:#172033;--muted:#64748b}*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:var(--ink);font-family:Pretendard,system-ui,sans-serif}.top{height:64px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:14px;padding:0 30px}.mark{background:var(--accent);color:#fff;padding:8px 10px;border-radius:9px;font-weight:900}.spacer{flex:1}a{color:#526075;text-decoration:none;font-size:14px}.shell{max-width:1250px;margin:auto;padding:30px}.intro{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.intro h1{margin:0;font-size:27px}.intro p{color:var(--muted);margin:8px 0 0}.layout{display:grid;grid-template-columns:420px minmax(320px,1fr);gap:26px;align-items:start}.panel{background:#fff;border:1px solid #dfe6f1;border-radius:16px;padding:20px;box-shadow:0 8px 25px rgba(31,50,81,.05)}.panel h2{font-size:16px;margin:0 0 14px}.field{margin:12px 0}.field label{display:block;font-size:12px;font-weight:800;color:#475569;margin-bottom:5px}.field input,.field textarea,.field select{width:100%;padding:10px;border:1px solid #d8e1ee;border-radius:9px;font:inherit;font-size:13px}.field textarea{min-height:72px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.templates{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.template{border:1px solid #d8e1ee;background:#fff;border-radius:9px;padding:9px 6px;font-size:11px;cursor:pointer}.template.active{border-color:var(--accent);background:#eef5ff;color:#174ea6;font-weight:800}.line{border-top:1px solid #edf1f6;margin:18px 0}.links{display:grid;gap:7px}.link-row{display:grid;grid-template-columns:1fr 1.4fr 34px;gap:6px}.icon{border:1px solid #d8e1ee;border-radius:8px;background:#fff;cursor:pointer}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{border:0;border-radius:9px;padding:11px 13px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}.actions button.secondary{background:#e9eef6;color:#334155}.status{font-size:12px;color:#2563eb;min-height:18px}.preview-wrap{position:sticky;top:20px;display:flex;justify-content:center}.phone{width:min(390px,100%);min-height:690px;border:10px solid #121826;border-radius:34px;background:#111119;overflow:hidden;box-shadow:0 24px 60px #17203344}.profile{min-height:670px;padding:30px 22px;color:#fff;background:linear-gradient(145deg,#141b2e,#171720)}.profile.portfolio{background:linear-gradient(145deg,#182b48,#12151d)}.profile.campaign{background:linear-gradient(145deg,#17316a,#121827)}.photo{width:132px;height:132px;border-radius:50%;background:#64748b center/cover;border:4px solid #ffffff55;margin:10px auto 18px}.profile h3{text-align:center;font-size:29px;margin:0}.role{text-align:center;color:#a9c8ff;margin:8px 0 18px;font-size:14px}.bio{text-align:center;line-height:1.65;color:#e1e8f5;font-size:14px}.contact{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:23px 0}.contact a,.cta{display:block;text-align:center;border:1px solid #ffffff2b;background:#ffffff12;border-radius:13px;padding:12px 7px;color:#fff;text-decoration:none;font-size:13px;font-weight:800}.cta{background:#2563eb;border:0;margin:10px 0 22px}.sections{border-top:1px solid #ffffff1f}.section{padding:15px 0;border-bottom:1px solid #ffffff1f}.section strong{display:block}.section small{display:block;color:#b4c0d5;margin-top:5px}.published{color:#16a34a;font-weight:800}@media(max-width:860px){.top{padding:0 15px}.shell{padding:20px 14px}.layout{grid-template-columns:1fr}.preview-wrap{position:static;order:-1}.phone{min-height:520px}.profile{min-height:500px}.intro{display:block}.intro a{display:inline-block;margin-top:12px}}
+    .profile.creator,.profile.consultant{background:linear-gradient(145deg,#182b48,#12151d)}.profile.local,.profile.candidate{background:linear-gradient(145deg,#17316a,#121827)}.profile.business{background:linear-gradient(145deg,#164e47,#101b1a)}.profile.speaker{background:linear-gradient(145deg,#5b285c,#17121c)}.social-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-preview{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:10px 0 16px}.social-preview span{padding:7px 9px;border:1px solid #ffffff2b;border-radius:999px;background:#ffffff0d;color:#dbeafe;font-size:10px;font-weight:800}
+  </style>
+</head>
+<body>
+ <header class="top"><span class="mark">PI</span><strong>POLLINSIGHT</strong><span>디지털 명함</span><span class="spacer"></span><a href="/profile-samples.html" target="_blank">완성 샘플 보기 ↗</a><a href="/workspace.html">내 작업</a><a href="/account.html">내 현황</a></header>
+ <main class="shell"><section class="intro"><div><h1>디지털 명함 만들기</h1><p>템플릿과 기본 정보만으로 모바일 프로필 페이지를 만들고 발행합니다.</p></div><a id="public-link" target="_blank" hidden>공개 페이지 열기 ↗</a></section><div class="layout"><section class="panel"><h2>프로필 정보</h2><div class="templates"><button class="template active" data-template="person">인물 소개형</button><button class="template" data-template="portfolio">포트폴리오형</button><button class="template" data-template="campaign">캠페인형</button></div><div class="field"><label>관리용 제목</label><input id="title" value="새 디지털 명함"></div><div class="two"><div class="field"><label>이름</label><input id="name" placeholder="홍길동"></div><div class="field"><label>역할 / 직책</label><input id="role" placeholder="지역 활동가"></div></div><div class="field"><label>한 줄 소개</label><textarea id="bio" placeholder="나와 나의 활동을 소개해 주세요."></textarea></div><div class="field"><label>프로필 사진</label><input id="photo" type="file" accept="image/*"><small>사진은 이 브라우저에서 선택한 파일을 프로필에 저장합니다.</small></div><div class="two"><div class="field"><label>전화</label><input id="phone" placeholder="010-0000-0000"></div><div class="field"><label>이메일</label><input id="email" placeholder="hello@example.com"></div></div><div class="two"><div class="field"><label>메신저 링크</label><input id="message-url" placeholder="https://..."></div><div class="field"><label>문의 링크</label><input id="inquiry-url" placeholder="https://..."></div></div><div class="line"></div><h2>SNS 계정</h2><p style="margin:-5px 0 12px;color:#64748b;font-size:12px">전체 계정 주소를 입력하면 공개 명함에 바로가기 버튼이 표시됩니다.</p><div class="social-grid"><div class="field"><label>Facebook</label><input id="social-facebook" type="url" placeholder="https://facebook.com/..."></div><div class="field"><label>YouTube 채널</label><input id="social-youtube" type="url" placeholder="https://youtube.com/@..."></div><div class="field"><label>Instagram</label><input id="social-instagram" type="url" placeholder="https://instagram.com/..."></div><div class="field"><label>블로그</label><input id="social-blog" type="url" placeholder="https://blog.naver.com/..."></div></div><div class="line"></div><h2>링크와 콘텐츠</h2><div id="links" class="links"></div><button class="icon" id="add-link">＋ 링크 추가</button><div class="field"><label>포트폴리오 / 대표 프로젝트</label><div id="portfolio-list" class="links" style="margin-bottom:8px"></div><button class="icon" id="add-portfolio" type="button">＋ 프로젝트 추가</button></div><div class="field"><label>자료실 / 첨부파일 (PDF, 문서 등)</label><div id="resource-list" class="links" style="margin-bottom:8px"></div><button class="icon" id="add-resource" type="button">＋ 자료 추가</button></div><div class="line"></div><h2>공개 설정</h2><div class="field"><label>공개 주소 (영문·숫자·하이픈)</label><input id="slug" placeholder="my-profile"></div><label style="font-size:13px"><input id="published" type="checkbox"> 이 페이지를 공개 발행합니다</label><p class="status" id="message"></p><div class="actions"><button id="save">저장</button><button id="publish" class="secondary">저장 후 발행</button></div></section><aside class="preview-wrap"><div class="phone"><article id="preview" class="profile person"><div id="preview-photo" class="photo"></div><h3 id="preview-name">이름</h3><p id="preview-role" class="role">역할 / 직책</p><p id="preview-bio" class="bio">소개 문구가 이곳에 표시됩니다.</p><div class="contact"><a id="preview-phone">전화</a><a id="preview-email">이메일</a></div><div id="preview-social" class="social-preview"></div><a id="preview-message" class="cta">프로젝트 문의하기</a><div class="sections"><div class="section"><strong>포트폴리오</strong><small id="preview-portfolio">등록한 프로젝트가 여기에 표시됩니다.</small></div><div class="section"><strong>자료실</strong><small id="preview-resources">등록한 자료가 여기에 표시됩니다.</small></div></div></article></div></aside></div></main>
+ <script>document.querySelector('.templates')?.insertAdjacentHTML('beforeend','<button class="template" data-template="creator">크리에이터형</button><button class="template" data-template="consultant">전문가형</button><button class="template" data-template="local">지역 활동형</button><button class="template" data-template="candidate">후보자형</button><button class="template" data-template="business">비즈니스형</button><button class="template" data-template="speaker">강연자형</button>');</script>
+ <script>
+   // Domain settings are intentionally kept alongside publishing, rather than
+   // implying that a typed hostname is already live on the internet.
+   document.querySelector('#slug')?.closest('.field')?.insertAdjacentHTML('afterend', '<div class="field"><label>연결할 자체 도메인 <small>(선택)</small></label><input id="custom-domain" placeholder="profile.example.com"><small>저장 후 관리자 DNS 확인 대기 상태로 등록됩니다. 공개 주소는 검증 완료 전까지 기본 주소를 사용합니다.</small></div><div class="field" id="profile-address"><label>기본 공개 주소</label><code></code><button type="button" class="icon" style="margin-left:8px;padding:5px 8px" id="copy-public-url">복사</button></div>');
+ </script>
+ <script>
+   document.querySelector('.actions')?.insertAdjacentHTML('beforeend', '<a id="page-builder" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none;padding:11px 13px;border-radius:9px" href="/profiles.html">페이지 구성</a>');
+   const pageBuilder = document.querySelector('#page-builder');
+   const refreshPageBuilder = () => { const id = new URLSearchParams(location.search).get('id'); pageBuilder.href = id ? `/profile-pages.html?id=${encodeURIComponent(id)}` : '/profiles.html'; pageBuilder.textContent = id ? '페이지 구성' : '먼저 기본 정보 저장'; };
+   refreshPageBuilder();
+ </script>
+ <script>
+    const uploadFile = async file => {
+      if (!state.id) throw new Error('명함 기본 정보를 먼저 저장하신 후 파일을 업로드해 주세요.');
+      const formData = new FormData();
+      formData.append('file', file);
+      const response = await fetch(apiRoot + '/api/profiles/' + state.id + '/upload', { method: 'POST', body: formData });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || '업로드 실패');
+      return data.url;
+    };
+    const profilePhotoInput = document.querySelector('#photo');
+    const profilePhotoField = profilePhotoInput?.closest('.field');
+    if (profilePhotoInput && profilePhotoField) {
+      profilePhotoField.style.border = '2px dashed #b9cbe5'; profilePhotoField.style.borderRadius = '10px'; profilePhotoField.style.padding = '12px';
+      const readProfilePhoto = async file => {
+        if (!state.id) { $('message').textContent = '명함 기본 정보를 먼저 저장하신 후 사진을 업로드해 주세요.'; alert('명함 기본 정보를 먼저 저장하신 후 사진을 업로드해 주세요.'); return; }
+        if (!file?.type?.startsWith('image/')) { $('message').textContent = '이미지 파일만 올릴 수 있습니다.'; return; }
+        try {
+           const url = await uploadFile(file);
+           state.photo = url; renderPreview();
+        } catch(e) { $('message').textContent = e.message; }
+      };
+      profilePhotoInput.addEventListener('change', event => readProfilePhoto(event.target.files[0]));
+      profilePhotoField.addEventListener('dragover', e => { e.preventDefault(); profilePhotoField.style.borderColor = '#2563eb'; });
+      profilePhotoField.addEventListener('dragleave', () => { profilePhotoField.style.borderColor = '#b9cbe5'; });
+      profilePhotoField.addEventListener('drop', event => { event.preventDefault(); profilePhotoField.style.borderColor = '#b9cbe5'; readProfilePhoto(event.dataTransfer.files[0]); });
+      profilePhotoField.insertAdjacentHTML('beforeend', '<small style="display:block;margin-top:7px;color:#2563eb;font-weight:700">이미지 파일을 이 영역에 끌어놓을 수 있습니다. (최대 8MB)</small>');
+    }
+
+ </script>
+ <script>
+   // Keep sharing and performance in the same creation flow after a profile exists.
+   (() => { const actions = document.querySelector('.actions'); const id = new URLSearchParams(location.search).get('id'); if (!actions || !id || document.querySelector('#profile-analytics-link')) return; const link = document.createElement('a'); link.id = 'profile-analytics-link'; link.className = 'secondary'; link.href = '/profile-analytics.html?id=' + encodeURIComponent(id); link.textContent = '성과 보기'; link.style.cssText = 'display:inline-flex;align-items:center;text-decoration:none;padding:11px 13px;border-radius:9px;background:#e9eef6;color:#334155;font-weight:800'; actions.append(link); })();
+ </script>
+ <script>
+   /* Conversational AI is kept in the studio so non-designers can begin with intent,
+      then still receive three editable, structured alternatives. */
+   (() => {
+     const id = new URLSearchParams(location.search).get('id');
+     const intro = document.querySelector('.intro');
+     if (!intro) return;
+     const panel = document.createElement('section'); panel.className = 'ai-chat-panel';
+     panel.innerHTML = `<div><strong>AI 명함 도우미</strong><p>원하는 분위기·강조할 내용·넣고 싶은 메뉴를 말해 주세요. AI가 서로 다른 3가지 구성으로 제안합니다.</p></div><div class="ai-chat-row"><input id="studio-ai-prompt" maxlength="300" placeholder="예: 지역 주민과의 소통을 강조하고, 공약·약도·영상 메뉴를 넣어줘"><button type="button" id="studio-ai-send">AI에게 만들기</button></div><p class="ai-chat-status" id="studio-ai-status"></p><div class="ai-chat-results" id="studio-ai-results"></div>`;
+     const style = document.createElement('style'); style.textContent = `.ai-chat-panel{margin:0 0 22px;padding:17px 18px;border:1px solid #cddafb;border-radius:15px;background:linear-gradient(105deg,#eef4ff,#fafbff)}.ai-chat-panel strong{font-size:16px;color:#1d4ed8}.ai-chat-panel p{margin:6px 0;color:#53627a;font-size:13px;line-height:1.55}.ai-chat-row{display:flex;gap:8px;margin-top:12px}.ai-chat-row input{flex:1;border:1px solid #b9cbed;border-radius:9px;padding:11px;font:inherit}.ai-chat-row button,.ai-apply{border:0;border-radius:9px;background:#2563eb;color:#fff;padding:11px 13px;font-weight:800;cursor:pointer}.ai-chat-status{min-height:18px;color:#1d4ed8!important}.ai-chat-results{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.ai-result{padding:12px;border-radius:10px;background:#fff;border:1px solid #d9e3f2}.ai-result b{font-size:13px}.ai-result span{display:block;color:#64748b;font-size:12px;min-height:37px;margin:5px 0}.ai-apply{width:100%;padding:8px;font-size:12px}@media(max-width:760px){.ai-chat-row{display:block}.ai-chat-row button{width:100%;margin-top:8px}.ai-chat-results{grid-template-columns:1fr}}`; document.head.append(style); intro.insertAdjacentElement('afterend', panel);
+     const request = async (path, options = {}) => { const response = await fetch(path, { credentials: 'include', headers: { 'Content-Type': 'application/json' }, ...options }); const data = await response.json().catch(() => ({})); if (!response.ok) throw Error(data.message || 'AI 요청을 처리하지 못했습니다.'); return data; };
+     const status = document.getElementById('studio-ai-status'), results = document.getElementById('studio-ai-results');
+     const apply = async proposal => { try { status.textContent = '선택한 구성안을 적용하고 있습니다.'; const current = await request('/api/profiles/' + id); const profile = current.profile; await request('/api/profiles/' + id, { method: 'PATCH', body: JSON.stringify({ title: profile.title, slug: profile.slug, template_key: proposal.templateKey, is_published: profile.is_published, profile_data: { ...(profile.profile_data || {}), pages: proposal.pages } }) }); status.textContent = '적용했습니다. 아래에서 내용과 디자인을 계속 편집할 수 있습니다.'; setTimeout(() => location.reload(), 450); } catch (error) { status.textContent = error.message; } };
+     document.getElementById('studio-ai-send').onclick = async () => { if (!id) { status.textContent = '먼저 기본 정보를 저장한 뒤 AI에게 요청해 주세요.'; return; } try { status.textContent = 'AI가 3가지 명함 구성을 준비하고 있습니다.'; results.innerHTML = ''; const data = await request('/api/profiles/' + id + '/design-proposals', { method: 'POST', body: JSON.stringify({ prompt: document.getElementById('studio-ai-prompt').value }) }); results.innerHTML = data.proposals.map((proposal, index) => `<article class="ai-result"><b>${index + 1}. ${proposal.name}</b><span>${proposal.description}</span><button class="ai-apply" data-proposal="${proposal.id}">이 구성 적용</button></article>`).join(''); results.querySelectorAll('[data-proposal]').forEach(button => button.onclick = () => apply(data.proposals.find(proposal => proposal.id === button.dataset.proposal))); status.textContent = data.source === 'ai' ? 'AI가 제안한 3가지 구성입니다. 하나를 골라 편집하세요.' : '입력 정보에 맞춘 3가지 구성입니다. 하나를 골라 편집하세요.'; } catch (error) { status.textContent = error.message; } };
+   })();
+ </script>
+ <script>
+   (() => { const id = new URLSearchParams(location.search).get('id'); const panel = document.querySelector('.ai-chat-panel'); if (!panel) return; const row = panel.querySelector('.ai-chat-row'); row.insertAdjacentHTML('afterend', '<div class="ai-conversation" id="studio-ai-conversation" aria-live="polite"><div class="ai-bubble">원하는 명함의 목적이나 분위기를 먼저 적어 주세요. 필요한 정보는 제가 이어서 질문하겠습니다.</div></div><button type="button" class="ai-question-button" id="studio-ai-question">AI에게 먼저 질문받기</button>'); const style = document.createElement('style'); style.textContent = '.ai-conversation{display:grid;gap:7px;margin-top:12px;max-height:210px;overflow:auto}.ai-bubble{padding:10px 12px;border-radius:11px;background:#fff;color:#40526d;font-size:12px;line-height:1.55;border:1px solid #d9e3f2}.ai-bubble.user{background:#2563eb;color:#fff;border-color:#2563eb;margin-left:38px}.ai-question-button{margin-top:9px;border:1px solid #9db9f5;background:#fff;color:#1d4ed8;border-radius:9px;padding:8px 10px;font-weight:800;cursor:pointer}'; document.head.append(style); const prompt = document.getElementById('studio-ai-prompt'), chat = document.getElementById('studio-ai-conversation'), status = document.getElementById('studio-ai-status'); const add = (text, user = false) => { const bubble = document.createElement('div'); bubble.className = 'ai-bubble' + (user ? ' user' : ''); bubble.textContent = text; chat.append(bubble); chat.scrollTop = chat.scrollHeight; }; document.getElementById('studio-ai-question').onclick = async () => { if (!id) { status.textContent = '먼저 기본 정보를 저장한 뒤 AI에게 요청해 주세요.'; return; } const message = prompt.value.trim(); if (message) add(message, true); try { status.textContent = 'AI가 필요한 정보를 확인하고 있습니다.'; const response = await fetch('/api/profiles/' + id + '/design-chat', { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message }) }); const data = await response.json().catch(() => ({})); if (!response.ok) throw Error(data.message || 'AI 대화를 처리하지 못했습니다.'); add(data.reply || '아래 정보를 알려주세요.'); (data.questions || []).forEach((question, index) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'ai-question-button'; button.textContent = (index + 1) + '. ' + question; button.onclick = () => { prompt.value = (prompt.value ? prompt.value + ' / ' : '') + question + ' '; prompt.focus(); }; chat.append(button); }); status.textContent = data.source === 'ai' ? '질문에 답한 뒤 “AI에게 만들기”를 누르면 됩니다. (대화 1크레딧)' : '질문에 답한 뒤 “AI에게 만들기”를 누르면 됩니다.'; } catch (error) { status.textContent = error.message; } }; })();
+ </script>
+<script>
+/* New-profile preview: show local-council examples until the creator starts editing. */
+(() => {
+  if (new URLSearchParams(location.search).get('id')) return;
+  const preview = document.getElementById('preview');
+  const phone = preview?.closest('.phone');
+  if (!preview || !phone) return;
+  const samples = [
+    { template: 'candidate', assetId: 16, name: '\uBC15\uC11C\uB9B0', role: '\uD574\uC624\uB984\uAD6C \uC2DC\uC758\uC6D0 \uC608\uBE44\uD6C4\uBCF4', bio: '\uC8FC\uBBFC \uAC01\uC790\uC758 \uC77C\uC0C1\uC5D0\uC11C \uB2F5\uC744 \uCC3E\uACA0\uC2B5\uB2C8\uB2E4.', portfolio: '\uB3CC\uBD04 \u00B7 \uAD50\uD1B5 \u00B7 \uC548\uC804 \uACF5\uC57D', resources: '\uC8FC\uBBFC \uC81C\uC548 \uBC1B\uAE30' },
+    { template: 'campaign', assetId: 17, name: '\uC774\uB3C4\uD604', role: '\uD478\uB978\uC2DC \uB3C4\uC758\uC6D0 \uD6C4\uBCF4', bio: '\uCCAD\uB144\uACFC \uAC00\uC871\uC758 \uC77C\uC0C1\uC744 \uC9C0\uD0A4 \uC2E4\uC6A9 \uC815\uCC45\uC744 \uC81C\uC548\uD569\uB2C8\uB2E4.', portfolio: '\uCCAD\uB144 \uC8FC\uAC70 \u00B7 \uC0DD\uD65C\uCCB4\uC721', resources: '\uC2DC\uBBFC \uC81C\uC548 \uCC38\uC5EC' },
+    { template: 'local', assetId: 18, name: '\uC624\uC720\uC9C4', role: '\uC0C8\uBD04\uB3D9 \uC8FC\uBBFC\uC18C\uD1B5\uC704\uC6D0\uD68C', bio: '\uC8FC\uBBFC\uC758 \uC774\uC57C\uAE30\uB97C \uC815\uCC45\uACFC \uB3D9\uB124\uC758 \uBCC0\uD654\uB85C \uC5F0\uACB0\uD569\uB2C8\uB2E4.', portfolio: '\uC774\uBC88 \uC8FC \uD604\uC7A5 \uC18C\uC2DD', resources: '\uC0AC\uBB34\uC18C \uC548\uB0B4 \u00B7 \uC57D\uB3C4' },
+    { template: 'campaign', assetId: 19, name: '\uAE40\uC131\uC7AC', role: '\uC2DC\uBBFC \uC815\uCC45\uBE0C\uB9AC\uD551 \uC6B4\uC601\uC790', bio: '\uBCF5\uC7A1\uD55C \uC815\uCC45\uC744 3\uBD84 \uC548\uC5D0 \uC27D\uAC8C \uC124\uBA85\uD569\uB2C8\uB2E4.', portfolio: '\uC774\uBC88 \uC8FC \uC815\uCC45 \uBE0C\uB9AC\uD551', resources: '\uBCF4\uB3C4\uC790\uB8CC \u00B7 \uCC38\uACE0 \uADFC\uAC70' }
+  ];
+  let current = 0, timer = null, editing = false;
+  const wrap = document.createElement('div');
+  wrap.className = 'sample-preview-control';
+  wrap.innerHTML = '<strong>\uAE30\uCD08\uC758\uC6D0 \uC0D8\uD50C \uBBF8\uB9AC\uBCF4\uAE30</strong><span></span><div class="sample-preview-dots"></div>';
+  phone.parentElement.insertBefore(wrap, phone);
+  const style = document.createElement('style');
+  style.textContent = '.preview-wrap{flex-direction:column;align-items:center;gap:10px}.sample-preview-control{width:min(390px,100%);display:flex;align-items:center;gap:8px;color:#475569;font-size:12px}.sample-preview-control span{flex:1}.sample-preview-dots{display:flex;gap:5px}.sample-preview-dots button{width:7px;height:7px;border:0;border-radius:999px;padding:0;background:#cbd5e1;cursor:pointer}.sample-preview-dots button.active{width:20px;background:#2563eb}.phone.sample-changing{animation:sampleFade .5s ease}@keyframes sampleFade{0%{opacity:.25;transform:translateY(8px) scale(.99)}100%{opacity:1;transform:none}}.profile.sample-profile{position:relative;padding:15px 18px 22px;overflow:hidden}.profile.sample-profile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 92% 3%,#ffffff22,transparent 31%);pointer-events:none}.sample-badge{position:relative;display:inline-flex;padding:6px 9px;border-radius:99px;background:#ffffff22;color:#dbeafe;font-size:10px;font-weight:800;letter-spacing:.04em}.profile.sample-profile .photo{position:relative;width:100%;height:240px;margin:12px 0 14px;border-radius:19px;border:1px solid #ffffff35;background-position:center 26%;box-shadow:0 12px 25px #0005}.profile.sample-profile h3{position:relative;text-align:left;font-size:27px}.profile.sample-profile .role,.profile.sample-profile .bio{text-align:left;position:relative}.profile.sample-profile .role{margin:5px 0 9px;color:#b9d3ff}.profile.sample-profile .bio{min-height:42px;margin:0;font-size:13px}.profile.sample-profile .contact{position:relative;margin:15px 0 9px}.profile.sample-profile .contact a{padding:9px 7px}.profile.sample-profile .cta{position:relative;margin:8px 0 13px;padding:11px;background:linear-gradient(90deg,#3b82f6,#2563eb)}.profile.sample-profile .sections{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:9px;border:0}.profile.sample-profile .section{min-height:70px;padding:11px;border:1px solid #ffffff22;border-radius:12px;background:#ffffff0d}.profile.sample-profile .section strong{font-size:12px}.profile.sample-profile .section small{font-size:11px;line-height:1.45}.profile.local.sample-profile{background:linear-gradient(145deg,#075e54,#102522)}.profile.candidate.sample-profile{background:linear-gradient(145deg,#182f6b,#111827)}';
+  document.head.append(style);
+  const dots = wrap.querySelector('.sample-preview-dots');
+  const polish = document.createElement('style');
+  polish.textContent = `
+    .phone:has(.sample-profile){min-height:720px;border:8px solid #0b1020;border-radius:38px;background:#0b1020;box-shadow:0 30px 70px #0f172a38}
+    .profile.sample-profile{min-height:704px;padding:0 18px 20px;background:linear-gradient(155deg,#123d7f 0%,#18366e 42%,#0b1630 100%)}
+    .profile.sample-profile:after{content:"";position:absolute;width:250px;height:250px;right:-130px;top:80px;border-radius:50%;background:#60a5fa22;filter:blur(2px);pointer-events:none}
+    .profile.sample-profile .sample-nav{position:relative;z-index:4;height:52px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#dbeafe;border-bottom:1px solid #ffffff20}
+    .profile.sample-profile .sample-brand{display:flex;gap:7px;align-items:center;font-weight:900;letter-spacing:.04em}.profile.sample-profile .sample-mark{display:grid;place-items:center;width:21px;height:21px;border-radius:7px;background:#fff;color:#174ea6;font-size:10px}
+    .profile.sample-profile .sample-menu{width:24px;height:18px;display:grid;align-content:space-between}.profile.sample-profile .sample-menu i{display:block;height:2px;border-radius:5px;background:#fff}
+    .profile.sample-profile .sample-badge{margin-top:17px;background:#ffffff1a;border:1px solid #ffffff38;color:#e7f0ff;box-shadow:0 5px 14px #0002}
+    .profile.sample-profile .photo{position:absolute;z-index:2;right:0;top:64px;width:54%;height:284px;margin:0;border:0;border-radius:0;background-position:center bottom;background-size:contain;background-repeat:no-repeat;box-shadow:none;filter:drop-shadow(0 18px 17px #0206178c)}
+    .profile.sample-profile h3{z-index:3;width:57%;margin:17px 0 0;text-align:left;font-size:32px;line-height:1.08;letter-spacing:-.07em;text-shadow:0 2px 16px #0f172a55}.profile.sample-profile .role{z-index:3;width:57%;margin:9px 0;color:#d3e4ff;text-align:left;font-size:11px;font-weight:800;line-height:1.45}.profile.sample-profile .bio{z-index:3;width:55%;min-height:72px;margin:14px 0 0;text-align:left;color:#f1f5f9;font-size:12px;line-height:1.65}
+    .profile.sample-profile .sample-topic{position:relative;z-index:4;display:flex;gap:5px;margin:19px 0 10px}.profile.sample-profile .sample-topic span{border:1px solid #ffffff30;border-radius:99px;padding:5px 7px;background:#ffffff14;color:#eff6ff;font-size:9px;font-weight:800}
+    .profile.sample-profile .sample-quick{position:relative;z-index:4;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:0 0 10px;border:1px solid #ffffff22;border-radius:13px;overflow:hidden;background:#ffffff20;box-shadow:0 9px 19px #0002}.profile.sample-profile .sample-quick div{padding:8px 5px;background:#0f2454a8;text-align:center}.profile.sample-profile .sample-quick b{display:block;color:#fff;font-size:13px;line-height:1.1}.profile.sample-profile .sample-quick span{display:block;margin-top:3px;color:#c8dcff;font-size:9px}
+    .profile.sample-profile .contact{position:relative;z-index:4;margin:0 0 8px;gap:7px}.profile.sample-profile .contact a{border-radius:11px;padding:10px 7px;background:#ffffff12;font-size:11px}.profile.sample-profile .cta{position:relative;z-index:4;margin:0 0 14px;padding:12px;border-radius:12px;background:linear-gradient(100deg,#60a5fa,#2563eb);box-shadow:0 10px 20px #0004;font-size:12px}
+    .profile.sample-profile .sections{position:relative;z-index:4;grid-template-columns:1fr 1fr;gap:8px;border:0}.profile.sample-profile .section{min-height:76px;padding:11px;border:1px solid #ffffff22;border-radius:14px;background:linear-gradient(145deg,#ffffff17,#ffffff09)}.profile.sample-profile .section strong:before{content:"●";color:#93c5fd;font-size:8px;margin-right:5px}.profile.sample-profile .section strong{font-size:11px}.profile.sample-profile .section small{font-size:10px;line-height:1.45;color:#dbeafe}
+    .profile.local.sample-profile{background:linear-gradient(155deg,#065f54,#12382f 52%,#0b211d)}.profile.local.sample-profile .cta{background:linear-gradient(100deg,#34d399,#059669)}.profile.local.sample-profile .sample-topic span{color:#d1fae5}.profile.local.sample-profile .section strong:before{color:#6ee7b7}.profile.local.sample-profile .sample-quick div{background:#0b3c35b8}.profile.campaign.sample-profile{background:linear-gradient(155deg,#4a1f73,#2b174e 52%,#121226)}.profile.campaign.sample-profile .cta{background:linear-gradient(100deg,#e9b8ff,#8b3dff)}.profile.campaign.sample-profile .sample-topic span{color:#f3e8ff}.profile.campaign.sample-profile .section strong:before{color:#d8b4fe}.profile.campaign.sample-profile .sample-quick div{background:#301b5ab8}
+  `;
+  document.head.append(polish);
+  const getAssetImage = asset => {
+    const data = asset?.element_data || {};
+    return data.imgSrc || data.src || data.imageUrl || data.image || data.url || '';
+  };
+  const assetApiRoot = ['5500', '5501'].includes(location.port) ? 'http://127.0.0.1:3000' : '';
+  async function loadLibraryPhotos() {
+    try {
+      await Promise.all(samples.map(async sample => {
+        const response = await fetch(assetApiRoot + '/api/public-assets/' + sample.assetId);
+        const payload = await response.json().catch(() => ({}));
+        if (response.ok) sample.photo = getAssetImage(payload.asset);
+      }));
+      paint(current);
+    } catch (_) { /* Keep the visual sample usable if the library is unavailable. */ }
+  }
+  function paint(index) {
+    if (editing) return;
+    const sample = samples[index];
+    phone.classList.remove('sample-changing'); void phone.offsetWidth; phone.classList.add('sample-changing');
+    preview.className = 'profile ' + sample.template + ' sample-profile';
+    let badge = document.getElementById('sample-preview-badge'); if (!badge) { badge = document.createElement('span'); badge.id = 'sample-preview-badge'; badge.className = 'sample-badge'; preview.prepend(badge); } badge.textContent = '\uAE30\uCD08\uC758\uC6D0 \uB514\uC9C0\uD138 \uBA85\uD568 \uC0D8\uD50C';
+    let nav = preview.querySelector('.sample-nav');
+    if (!nav) { nav = document.createElement('div'); nav.className = 'sample-nav'; nav.innerHTML = '<span class="sample-brand"><b class="sample-mark">PI</b>\uC8FC\uBBFC\uACFC \uD568\uAED8</span><span class="sample-menu"><i></i><i></i><i></i></span>'; preview.prepend(nav); }
+    let topic = preview.querySelector('.sample-topic');
+    if (!topic) { topic = document.createElement('div'); topic.className = 'sample-topic'; topic.innerHTML = '<span>\uC0B6\uC758 \uD604\uC7A5</span><span>\uC8FC\uBBFC \uC81C\uC548</span><span>\uC815\uCC45 \uC18C\uC2DD</span>'; document.getElementById('preview-bio').insertAdjacentElement('afterend', topic); }
+    let quick = preview.querySelector('.sample-quick');
+    if (!quick) { quick = document.createElement('div'); quick.className = 'sample-quick'; quick.innerHTML = '<div><b>12</b><span>\uC9C0\uC5ED \uD604\uC7A5</span></div><div><b>04</b><span>\uD575\uC2EC \uACF5\uC57D</span></div><div><b>24H</b><span>\uC18C\uD1B5 \uCC3D\uAD6C</span></div>'; topic.insertAdjacentElement('afterend', quick); }
+    const portrait = document.getElementById('preview-photo');
+    portrait.style.backgroundImage = sample.photo ? `url("${sample.photo}")` : 'radial-gradient(circle at 50% 30%, #dbeafe 0 16%, transparent 17%), linear-gradient(145deg,#dbeafe55,#93c5fd22)';
+    document.getElementById('preview-name').textContent = sample.name;
+    document.getElementById('preview-role').textContent = sample.role;
+    document.getElementById('preview-bio').textContent = sample.bio;
+    document.getElementById('preview-phone').textContent = '\uC804\uD654 \uC0C1\uB2F4';
+    document.getElementById('preview-email').textContent = '\uC774\uBA54\uC77C';
+    document.getElementById('preview-message').textContent = '\uC8FC\uBBFC \uC758\uACAC \uBCF4\uB0B4\uAE30';
+    document.getElementById('preview-portfolio').textContent = sample.portfolio;
+    document.getElementById('preview-resources').textContent = sample.resources;
+    dots.querySelectorAll('button').forEach((button, dotIndex) => button.classList.toggle('active', dotIndex === index));
+  }
+  samples.forEach((sample, index) => { const dot = document.createElement('button'); dot.type = 'button'; dot.setAttribute('aria-label', (index + 1) + '\uBC88 \uC0D8\uD50C \uBCF4\uAE30'); dot.onclick = () => { current = index; paint(current); restart(); }; dots.append(dot); });
+  function restart() { clearInterval(timer); if (!editing) timer = setInterval(() => { current = (current + 1) % samples.length; paint(current); }, 4200); }
+  function stopForEditing() { if (editing) return; editing = true; clearInterval(timer); document.getElementById('sample-preview-badge')?.remove(); wrap.innerHTML = '<strong>\uB0B4 \uBA85\uD568 \uBBF8\uB9AC\uBCF4\uAE30</strong><span>\uC785\uB825 \uB0B4\uC6A9\uC774 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uBC18\uC601\uB429\uB2C8\uB2E4.</span>'; renderPreview(); }
+  document.querySelectorAll('.panel input,.panel textarea,.panel .template').forEach(element => element.addEventListener('input', stopForEditing, { once: true }));
+  document.querySelectorAll('.panel .template').forEach(element => element.addEventListener('click', stopForEditing, { once: true }));
+  phone.addEventListener('mouseenter', () => clearInterval(timer)); phone.addEventListener('mouseleave', restart);
+  paint(0); loadLibraryPhotos(); restart();
+})();
+</script>
+<script>
+/* Resilient studio core: kept separate so an optional enhancement cannot block editing. */
+(() => {
+  const $ = id => document.getElementById(id);
+  const root = ['5500','5501'].includes(location.port) ? 'http://127.0.0.1:3000' : '';
+  const query = new URLSearchParams(location.search);
+  const alias = { policy:'candidate', civic:'local' };
+  const requested = alias[query.get('template')] || query.get('template') || 'person';
+  const state = { id:null, template:requested, photo:'', links:[], portfolio:[], resources:[] };
+  const safe = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const request = async (path, options={}) => {
+    const response = await fetch(root + path, { credentials:'include', headers:{'Content-Type':'application/json'}, ...options });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.message || '요청을 처리하지 못했습니다.');
+    return data;
+  };
+  const value = id => $(id)?.value || '';
+  const data = () => ({
+    name:value('name'), role:value('role'), bio:value('bio'), photo:state.photo,
+    phone:value('phone'), email:value('email'), messageUrl:value('message-url'), inquiryUrl:value('inquiry-url'),
+    customDomain:value('custom-domain'), links:state.links,
+    social:{ facebook:value('social-facebook'), youtube:value('social-youtube'), instagram:value('social-instagram'), blog:value('social-blog') },
+    portfolio:state.portfolio,
+    resources:state.resources
+  });
+  function renderLinks(){
+    const box = $('links'); if (!box) return;
+    box.innerHTML = state.links.map((link,index) => `<div class="link-row"><input data-label="${index}" value="${safe(link.label)}" placeholder="링크 이름"><input data-url="${index}" value="${safe(link.url)}" placeholder="https://..."><button class="icon" data-remove="${index}" type="button">×</button></div>`).join('');
+    box.querySelectorAll('[data-label]').forEach(input => input.oninput = event => { state.links[event.target.dataset.label].label = event.target.value; renderPreview(); });
+    box.querySelectorAll('[data-url]').forEach(input => input.oninput = event => { state.links[event.target.dataset.url].url = event.target.value; renderPreview(); });
+    box.querySelectorAll('[data-remove]').forEach(button => button.onclick = () => { state.links.splice(Number(button.dataset.remove),1); renderLinks(); renderPreview(); });
+  }
+  // 모달 동적 생성 및 스타일 추가
+  const addProjectModalHtml = () => {
+    if ($('project-modal')) return;
+    const modal = document.createElement('div');
+    modal.id = 'project-modal';
+    modal.style.cssText = 'display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center; padding: 20px;';
+    modal.innerHTML = `
+      <div style="background:#fff; border-radius:16px; width:min(500px, 100%); max-height:85vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 20px 25px -5px rgba(0,0,0,0.15);">
+        <header style="padding:16px 20px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+          <strong style="font-size:16px; color:#1e293b; font-family:inherit;">내 카드뉴스 디자인 가져오기</strong>
+          <button id="project-modal-close" style="background:none; border:0; font-size:24px; cursor:pointer; color:#94a3b8; font-weight:300; line-height:1;">&times;</button>
+        </header>
+        <div id="project-modal-list" style="flex:1; overflow-y:auto; padding:20px; display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+          <p style="grid-column:1/-1; text-align:center; color:#64748b; font-size:13px;">디자인 프로젝트를 불러오고 있습니다...</p>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    $('project-modal-close').onclick = () => { modal.style.display = 'none'; };
+  };
+
+  let activePfIndexForImport = null;
+  function openProjectModal(pfIndex) {
+    activePfIndexForImport = pfIndex;
+    addProjectModalHtml();
+    const modal = $('project-modal');
+    modal.style.display = 'flex';
+    const listContainer = $('project-modal-list');
+    listContainer.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#64748b; font-size:13px;">디자인 프로젝트를 불러오고 있습니다...</p>';
+
+    fetch(root + '/api/projects/load', { credentials: 'include' })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success || !data.projects || !data.projects.length) {
+          listContainer.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#64748b; font-size:13px;">저장된 카드뉴스 프로젝트가 없습니다.</p>';
+          return;
+        }
+        listContainer.innerHTML = data.projects.map(proj => `
+          <div data-proj-id="${proj.id}" style="border:1px solid #e2e8f0; border-radius:10px; overflow:hidden; cursor:pointer; background:#fff; transition:0.2s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <div style="height:120px; background:#f1f5f9; display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid #e2e8f0; position:relative;">
+              ${proj.preview_data ? `<img src="${safe(proj.preview_data)}" style="width:100%; height:100%; object-fit:cover;">` : '<span style="color:#94a3b8; font-size:12px;">미리보기 없음</span>'}
+            </div>
+            <div style="padding:10px; font-size:12px; font-weight:700; color:#1e293b; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+              ${safe(proj.title)}
+            </div>
+          </div>
+        `).join('');
+
+        listContainer.querySelectorAll('[data-proj-id]').forEach(el => {
+          el.onclick = () => {
+            const projId = Number(el.dataset.projId);
+            const proj = data.projects.find(p => p.id === projId);
+            if (proj && proj.preview_data) {
+              state.portfolio[activePfIndexForImport].image = proj.preview_data;
+              if (!state.portfolio[activePfIndexForImport].title || state.portfolio[activePfIndexForImport].title === '새 프로젝트') {
+                state.portfolio[activePfIndexForImport].title = proj.title;
+              }
+              renderPortfolios();
+              renderPreview();
+              $('message').textContent = `카드뉴스 "${proj.title}" 이미지를 연동했습니다.`;
+            } else {
+              alert('해당 프로젝트는 미리보기 이미지가 없어 가져올 수 없습니다. 카드뉴스 스튜디오에서 먼저 저장해 주세요.');
+            }
+            modal.style.display = 'none';
+          };
+        });
+      })
+      .catch(err => {
+        listContainer.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#ef4444; font-size:13px;">불러오기 실패: ${err.message}</p>`;
+      });
+  }
+
+  function renderPortfolios() {
+    const box = $('portfolio-list'); if (!box) return;
+    box.innerHTML = state.portfolio.map((item, index) => `
+      <div class="link-row" style="grid-template-columns: 1fr 1fr 190px 34px; align-items: center; margin-bottom: 6px;">
+        <input data-pf-title="${index}" value="${safe(item.title)}" placeholder="프로젝트 이름">
+        <input data-pf-url="${index}" value="${safe(item.url || '')}" placeholder="연결 주소 (선택)">
+        <div style="display: flex; gap: 4px; align-items: center; justify-content: center;">
+          <label class="icon" style="padding: 5px 8px; font-size: 11px; cursor: pointer; background: #eef5ff; border: 1px solid #b9cbed; border-radius: 6px; margin: 0; color: #1d4ed8; font-weight: 700; white-space: nowrap;">
+            📁 이미지
+            <input type="file" accept="image/*" data-pf-file="${index}" style="display: none;">
+          </label>
+          <button class="icon" type="button" data-pf-import="${index}" style="padding: 5px 8px; font-size: 11px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; font-weight: 700; border-radius: 6px; cursor: pointer; white-space: nowrap;">
+            🎨 카드뉴스
+          </button>
+          ${item.image ? `<img src="${safe(item.image)}" style="width: 28px; height: 28px; object-fit: cover; border-radius: 4px; border: 1px solid #cbd5e1;" title="이미지 등록됨">` : ''}
+        </div>
+        <button class="icon" data-pf-remove="${index}" type="button">×</button>
+      </div>
+    `).join('');
+
+    box.querySelectorAll('[data-pf-title]').forEach(el => el.oninput = e => { state.portfolio[e.target.dataset.pfTitle].title = e.target.value; renderPreview(); });
+    box.querySelectorAll('[data-pf-url]').forEach(el => el.oninput = e => { state.portfolio[e.target.dataset.pfUrl].url = e.target.value; renderPreview(); });
+    box.querySelectorAll('[data-pf-import]').forEach(el => el.onclick = () => { openProjectModal(Number(el.dataset.pfImport)); });
+    box.querySelectorAll('[data-pf-file]').forEach(el => el.onchange = async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const idx = Number(e.target.dataset.pfFile);
+      $('message').textContent = '프로젝트 이미지를 업로드 중입니다...';
+      try {
+        const url = await uploadFile(file);
+        state.portfolio[idx].image = url;
+        renderPortfolios();
+        renderPreview();
+        $('message').textContent = '이미지가 업로드되었습니다.';
+      } catch (error) {
+        $('message').textContent = error.message;
+      }
+    });
+    box.querySelectorAll('[data-pf-remove]').forEach(el => el.onclick = () => { state.portfolio.splice(Number(el.dataset.pfRemove), 1); renderPortfolios(); renderPreview(); });
+  }
+  function renderResources() {
+    const box = $('resource-list'); if (!box) return;
+    box.innerHTML = state.resources.map((item, index) => `
+      <div class="link-row" style="grid-template-columns: 1fr 1fr 120px 34px; align-items: center; margin-bottom: 6px;">
+        <input data-res-title="${index}" value="${safe(item.title)}" placeholder="자료 이름">
+        <input data-res-url="${index}" value="${safe(item.url || '')}" placeholder="자료 파일 주소" readonly>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <label class="icon" style="padding: 5px 8px; font-size: 11px; cursor: pointer; background: #eef5ff; border: 1px solid #b9cbed; border-radius: 6px; margin: 0; color: #1d4ed8; font-weight: 700; width: 100%; text-align: center;">
+            📁 파일 업로드
+            <input type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.zip" data-res-file="${index}" style="display: none;">
+          </label>
+        </div>
+        <button class="icon" data-res-remove="${index}" type="button">×</button>
+      </div>
+    `).join('');
+
+    box.querySelectorAll('[data-res-title]').forEach(el => el.oninput = e => { state.resources[e.target.dataset.resTitle].title = e.target.value; renderPreview(); });
+    box.querySelectorAll('[data-res-file]').forEach(el => el.onchange = async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const idx = Number(e.target.dataset.resFile);
+      $('message').textContent = '자료 파일을 업로드 중입니다...';
+      try {
+        const url = await uploadFile(file);
+        state.resources[idx].url = url;
+        if (!state.resources[idx].title) {
+          state.resources[idx].title = file.name;
+        }
+        renderResources();
+        renderPreview();
+        $('message').textContent = '자료 파일이 업로드되었습니다.';
+      } catch (error) {
+        $('message').textContent = error.message;
+      }
+    });
+    box.querySelectorAll('[data-res-remove]').forEach(el => el.onclick = () => { state.resources.splice(Number(el.dataset.resRemove), 1); renderResources(); renderPreview(); });
+  }
+  function renderPreview(){
+    const profile = $('preview'); if (!profile) return; const current = data();
+    profile.className = 'profile ' + state.template;
+    $('preview-name').textContent = current.name || '이름';
+    $('preview-role').textContent = current.role || '역할 / 직책';
+    $('preview-bio').textContent = current.bio || '소개 문구가 이곳에 표시됩니다.';
+    $('preview-photo').style.backgroundImage = current.photo ? `url("${current.photo}")` : '';
+    $('preview-phone').textContent = current.phone ? '전화 ' + current.phone : '전화';
+    $('preview-email').textContent = current.email ? '이메일 보내기' : '이메일';
+    const socialNames={facebook:'Facebook',youtube:'YouTube',instagram:'Instagram',blog:'Blog'};
+    $('preview-social').innerHTML=Object.entries(current.social).filter(([,url])=>url.trim()).map(([key])=>`<span>${socialNames[key]}</span>`).join('');
+    $('preview-portfolio').textContent = current.portfolio.map(item => item.title).join(' · ') || '등록한 프로젝트가 여기에 표시됩니다.';
+    $('preview-resources').textContent = current.resources.map(item => item.title).join(' · ') || '등록한 자료가 여기에 표시됩니다.';
+    $('preview-message').textContent = current.inquiryUrl ? '문의하기' : '프로젝트 문의하기';
+  }
+  function syncTemplate(){ document.querySelectorAll('.template').forEach(button => button.classList.toggle('active', button.dataset.template === state.template)); }
+  function updateAddress(){ const code = $('profile-address')?.querySelector('code'); if(code) code.textContent = location.origin + '/p/' + (value('slug').trim() || 'your-profile'); }
+  async function save(publish=false){
+    try {
+      $('message').textContent = '저장 중입니다…'; if(publish) $('published').checked = true;
+      const payload = { title:value('title'), slug:value('slug'), template_key:state.template, is_published:$('published').checked, profile_data:data() };
+      let result;
+      if(state.id) result = await request('/api/profiles/' + state.id, {method:'PATCH',body:JSON.stringify(payload)});
+      else { result = await request('/api/profiles',{method:'POST',body:JSON.stringify(payload)}); state.id = result.profileId; }
+      $('message').textContent = payload.is_published ? '공개 발행되었습니다.' : '비공개로 저장되었습니다.';
+      if(result.publicUrl){ $('public-link').href=result.publicUrl; $('public-link').hidden=false; }
+    } catch(error) { $('message').textContent = error.message; }
+  }
+  async function load(){
+    const id=query.get('id');
+    if(!id){ syncTemplate(); renderLinks(); renderPortfolios(); renderResources(); renderPreview(); updateAddress(); return; }
+    try {
+      const result=await request('/api/profiles/'+id), profile=result.profile, stored=profile.profile_data||{};
+      state.id=profile.id; state.template=profile.template_key||'person'; state.photo=stored.photo||''; state.links=stored.links||[];
+      state.portfolio=stored.portfolio||[]; state.resources=stored.resources||[];
+      $('title').value=profile.title||''; $('slug').value=profile.slug||''; $('published').checked=Boolean(profile.is_published);
+      ['name','role','bio','phone','email'].forEach(key => { if($(key)) $(key).value=stored[key]||''; });
+      $('message-url').value=stored.messageUrl||''; $('inquiry-url').value=stored.inquiryUrl||'';
+      Object.entries(stored.social||{}).forEach(([key,url])=>{ const input=$('social-'+key); if(input) input.value=url||''; });
+      if($('custom-domain')) $('custom-domain').value=stored.customDomain||'';
+      if(profile.is_published){ $('public-link').href='/p/'+profile.slug; $('public-link').hidden=false; }
+      syncTemplate(); renderLinks(); renderPortfolios(); renderResources(); renderPreview(); updateAddress();
+    } catch(error) { $('message').textContent=error.message; }
+  }
+  document.querySelectorAll('.panel input,.panel textarea').forEach(input=>input.addEventListener('input',()=>{renderPreview();updateAddress();}));
+  document.querySelectorAll('.template').forEach(button=>button.addEventListener('click',()=>{state.template=button.dataset.template;syncTemplate();renderPreview();}));
+  $('add-link').onclick=()=>{state.links.push({label:'새 링크',url:''});renderLinks();};
+  $('add-portfolio').onclick=()=>{state.portfolio.push({title:'새 프로젝트',url:'',image:''});renderPortfolios();renderPreview();};
+  $('add-resource').onclick=()=>{state.resources.push({title:'',url:''});renderResources();renderPreview();};
+  $('photo').onchange=event=>{const file=event.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;renderPreview();};reader.readAsDataURL(file);};
+  $('save').onclick=()=>save(false); $('publish').onclick=()=>save(true); load();
+})();
+</script>
+<script>
+/* Existing sample profiles use their real published mobile page as the editor
+   preview. This keeps the selected sample photo, content, and unique layout
+   visible instead of collapsing every design into the legacy generic card. */
+(() => {
+  const id = new URLSearchParams(location.search).get('id');
+  if (!id) return;
+  fetch('/api/profiles/' + encodeURIComponent(id), { credentials: 'include' })
+    .then(response => response.json())
+    .then(({ profile }) => {
+      if (!profile?.slug?.startsWith('sample-')) return;
+      const phone = document.querySelector('.preview-wrap .phone');
+      const preview = document.querySelector('#preview');
+      const wrap = document.querySelector('.preview-wrap');
+      if (!phone || !preview || !wrap) return;
+      const controls = document.createElement('div');
+      controls.className = 'real-preview-controls';
+      controls.innerHTML = '<strong>실제 발행 디자인 미리보기</strong><span>사진·영상·카드뉴스·공약 포함</span><button type="button">간단 미리보기</button>';
+      const frame = document.createElement('iframe');
+      frame.className = 'real-profile-preview';
+      frame.title = profile.title + ' 실제 디자인 미리보기';
+      frame.src = '/p/' + encodeURIComponent(profile.slug) + '?editor-preview=' + Date.now();
+      phone.classList.add('real-design-phone');
+      phone.append(frame);
+      preview.hidden = true;
+      wrap.prepend(controls);
+      const style = document.createElement('style');
+      style.textContent = '.preview-wrap{flex-direction:column;align-items:center}.real-preview-controls{width:min(430px,100%);display:grid;grid-template-columns:1fr auto;gap:3px 10px;align-items:center;margin-bottom:10px;color:#334155}.real-preview-controls strong{font-size:13px}.real-preview-controls span{font-size:11px;color:#748094}.real-preview-controls button{grid-column:2;grid-row:1/3;border:1px solid #d7e0ed;border-radius:8px;background:#fff;padding:7px 9px;color:#536174;font-size:11px}.phone.real-design-phone{width:min(430px,100%);height:760px;min-height:760px;border:8px solid #111827;border-radius:38px;background:#fff;overflow:hidden}.real-profile-preview{display:block;width:100%;height:100%;border:0;background:#fff}.phone.real-design-phone.simple .real-profile-preview{display:none}.phone.real-design-phone.simple #preview{display:block!important}.phone.real-design-phone.simple{height:auto;min-height:690px}';
+      document.head.append(style);
+      controls.querySelector('button').onclick = () => {
+        const simple = phone.classList.toggle('simple');
+        preview.hidden = !simple;
+        controls.querySelector('button').textContent = simple ? '실제 디자인' : '간단 미리보기';
+      };
+      ['save','publish'].forEach(buttonId => document.querySelector('#' + buttonId)?.addEventListener('click', () => {
+        setTimeout(() => { frame.src = '/p/' + encodeURIComponent(document.querySelector('#slug')?.value || profile.slug) + '?editor-preview=' + Date.now(); }, 1200);
+      }));
+    })
+    .catch(() => {});
+})();
+</script>
+
+</body></html>
