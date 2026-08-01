@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17366f">
+  <title>박서린 | 디지털 명함</title>
+  <style>
+    :root{--navy:#132a50;--blue:#285fbd;--ink:#172033;--muted:#6d7788;--line:#e8ebf1;--soft:#f5f7fb;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:#e9edf4}
+    body{margin:0;color:var(--ink);font-family:Pretendard,"Noto Sans KR",system-ui,-apple-system,sans-serif;letter-spacing:-.025em}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    a{text-decoration:none;color:inherit}
+    .shell{width:min(100%,430px);min-height:100vh;margin:auto;background:#fff;box-shadow:0 0 44px #1b29451c;overflow:hidden}
+    .hero{position:relative;height:550px;background:#d8e3ef;overflow:hidden;color:#fff}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0d234911 35%,#10264cdd 82%,#10264c 100%)}
+    .hero-photo{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+    .topbar{position:absolute;z-index:3;top:0;left:0;right:0;padding:calc(18px + env(safe-area-inset-top)) 19px 0;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:-.02em;text-shadow:0 1px 12px #0006}
+    .brand-mark{display:grid;place-items:center;width:29px;height:29px;border:1px solid #ffffff99;border-radius:10px;background:#ffffff1d;backdrop-filter:blur(12px)}
+    .share{width:40px;height:40px;border:1px solid #ffffff70;border-radius:50%;background:#152b4d52;color:#fff;backdrop-filter:blur(12px);font-size:18px}
+    .identity{position:absolute;z-index:3;left:24px;right:24px;bottom:28px}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;opacity:.78}
+    h1{margin:8px 0 4px;font-size:43px;line-height:1;font-weight:850;letter-spacing:-.085em}
+    .role{margin:0;font-size:15px;font-weight:650;opacity:.88}
+    .slogan{margin:20px 0 0;font-size:23px;line-height:1.35;font-weight:750;letter-spacing:-.055em}
+    .quick{position:relative;z-index:4;margin:-1px 18px 0;padding:18px 12px 16px;border-radius:20px;background:#fff;box-shadow:0 14px 30px #132a5017;display:grid;grid-template-columns:repeat(4,1fr)}
+    .quick button,.quick a{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:8px;color:#354054;font-size:11px;font-weight:700}
+    .qicon{display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:#eff4fc;color:var(--blue);font-size:18px}
+    main{padding-bottom:102px}
+    .section{padding:34px 20px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:15px}
+    .section h2{margin:0;font-size:22px;letter-spacing:-.06em}
+    .section-head span{font-size:12px;color:#8791a1}
+    .intro{margin:0;color:#4f5a6c;font-size:15px;line-height:1.75}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+    .tags span{padding:8px 11px;border-radius:999px;background:#f0f4fa;color:#31517e;font-size:12px;font-weight:700}
+    .social-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .social-row a{display:flex;min-width:0;flex-direction:column;align-items:center;gap:7px;padding:13px 3px;border:1px solid var(--line);border-radius:16px;background:#fff;color:#465165;font-size:10px;font-weight:750}
+    .social-row b{display:grid;place-items:center;width:35px;height:35px;border-radius:12px;background:#eef3fa;color:#234c8d;font-size:12px;letter-spacing:-.04em}
+    .video{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#11284c;box-shadow:0 9px 24px #132a501e}
+    .video iframe{width:100%;height:100%;border:0}
+    .video-note{margin:11px 2px 0;font-size:12px;color:#7d8796;line-height:1.55}
+    .carousel{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 20px 13px;margin:0 -20px;scrollbar-width:none}
+    .carousel::-webkit-scrollbar{display:none}
+    .news{scroll-snap-align:start;min-height:300px;padding:24px;border-radius:22px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 22px #172b501f}
+    .news:nth-child(1){background:linear-gradient(145deg,#173c79,#3275d5)}
+    .news:nth-child(2){background:linear-gradient(145deg,#147061,#32a481)}
+    .news:nth-child(3){background:linear-gradient(145deg,#714214,#d58a31)}
+    .news small{font-size:11px;letter-spacing:.08em;font-weight:800;opacity:.72}
+    .news b{display:block;font-size:62px;line-height:.9;opacity:.18;letter-spacing:-.08em}
+    .news h3{margin:13px 0 9px;font-size:28px;line-height:1.22;letter-spacing:-.065em}
+    .news p{margin:0;font-size:13px;line-height:1.55;opacity:.83}
+    .dots{text-align:center;color:#c6ccd5;font-size:20px;letter-spacing:5px}.dots b{color:var(--blue)}
+    .pledges{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line)}
+    summary{list-style:none;padding:21px 2px;display:grid;grid-template-columns:38px 1fr 22px;align-items:center;gap:10px;cursor:pointer}
+    summary::-webkit-details-marker{display:none}
+    .num{font-size:12px;font-weight:850;color:var(--blue)}
+    summary strong{font-size:16px}
+    .plus{font-size:22px;color:#8b95a5;transition:.2s}
+    details[open] .plus{transform:rotate(45deg)}
+    .detail{padding:0 48px 22px;color:#5c6676;font-size:13px;line-height:1.7}
+    .career{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+    .career time{color:#8b94a1}.career strong{font-weight:650}
+    .notice{margin:30px 20px 0;padding:16px;border-radius:14px;background:var(--soft);font-size:11px;line-height:1.6;color:#788292;text-align:center}
+    .bottom{position:fixed;z-index:10;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,430px);padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:#ffffffed;border-top:1px solid #e5e9ef;backdrop-filter:blur(16px);display:grid;grid-template-columns:1fr 1.8fr;gap:9px}
+    .bottom button,.bottom a{height:52px;border-radius:15px;display:grid;place-items:center;font-size:14px;font-weight:800}
+    .outline{border:1px solid #d9e0e9;background:#fff;color:#344055}
+    .primary{border:0;background:var(--navy);color:#fff}
+    .toast{position:fixed;z-index:30;left:50%;bottom:88px;transform:translate(-50%,20px);width:max-content;max-width:calc(100% - 40px);padding:12px 16px;border-radius:12px;background:#172033;color:#fff;font-size:13px;opacity:0;pointer-events:none;transition:.25s}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:700px){body{padding:30px 0}.shell{min-height:calc(100vh - 60px);border-radius:28px}.bottom{bottom:30px;border-radius:0 0 28px 28px}.hero{height:570px}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <img class="hero-photo" src="../profile-samples/candidate-park-seorin.png" alt="박서린 후보 프로필">
+      <div class="topbar">
+        <div class="brand"><span class="brand-mark">서</span><span>박서린의 우리동네</span></div>
+        <button class="share" type="button" aria-label="공유하기" id="share">↗</button>
+      </div>
+      <div class="identity">
+        <div class="eyebrow">해오름구 시의원 예비후보</div>
+        <h1>박서린</h1>
+        <p class="role">생활에서 답을 찾는 사람</p>
+        <p class="slogan">가까이 듣고,<br>분명하게 바꾸겠습니다.</p>
+      </div>
+    </header>
+
+    <nav class="quick" aria-label="빠른 연결">
+      <button type="button" data-demo="전화 연결"><span class="qicon">☎</span><span>전화</span></button>
+      <button type="button" data-demo="문자 연결"><span class="qicon">✉</span><span>문자</span></button>
+      <a href="#pledges"><span class="qicon">✓</span><span>공약</span></a>
+      <button type="button" id="share2"><span class="qicon">↗</span><span>공유</span></button>
+    </nav>
+
+    <main>
+      <section class="section">
+        <div class="section-head"><h2>안녕하세요, 박서린입니다</h2></div>
+        <p class="intro">주민의 평범한 하루가 더 안전하고 편안해지도록 현장에서 듣고, 예산과 조례로 답하겠습니다. 보여주기보다 결과로 증명하겠습니다.</p>
+        <div class="tags"><span>#생활정치</span><span>#돌봄</span><span>#안전한통학로</span></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>SNS에서 만나요</h2><span>공식 계정 바로가기</span></div>
+        <div class="social-row">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener"><b>f</b><span>Facebook</span></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener"><b>▶</b><span>YouTube</span></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener"><b>◎</b><span>Instagram</span></a>
+          <a href="https://blog.naver.com/" target="_blank" rel="noopener"><b>B</b><span>Blog</span></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>현장 이야기</h2><span>YouTube 영상</span></div>
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?rel=0" title="정책 소개 영상 샘플" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-note">실제 발행 시 후보자의 유튜브 영상 주소가 이 영역에 연결됩니다.</p>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>카드로 보는 3대 약속</h2><span>옆으로 넘겨보세요</span></div>
+        <div class="carousel" id="carousel">
+          <article class="news"><small>PROMISE CARD 01</small><div><b>01</b><h3>아침 8시<br>돌봄교실 확대</h3><p>맞벌이 가정의 출근 시간에 맞춘 학교 연계형 아침 돌봄을 확대하겠습니다.</p></div></article>
+          <article class="news"><small>PROMISE CARD 02</small><div><b>02</b><h3>우리동네<br>안심 통학로</h3><p>사고 다발 구간을 전수 점검하고 보행 신호와 안전 조명을 개선하겠습니다.</p></div></article>
+          <article class="news"><small>PROMISE CARD 03</small><div><b>03</b><h3>주민제안<br>예산 공개제</h3><p>주민이 제안한 사업의 검토 과정과 예산 반영 결과를 투명하게 공개하겠습니다.</p></div></article>
+        </div>
+        <div class="dots"><b>•</b>••</div>
+      </section>
+
+      <section class="section" id="pledges">
+        <div class="section-head"><h2>주요 공약</h2><span>눌러서 자세히 보기</span></div>
+        <div class="pledges">
+          <details><summary><span class="num">01</span><strong>아이 돌봄 공백 해소</strong><span class="plus">＋</span></summary><div class="detail">아침·저녁 돌봄 시간을 확대하고 지역 유휴공간을 활용한 긴급 돌봄 거점을 만들겠습니다.</div></details>
+          <details><summary><span class="num">02</span><strong>안전한 보행 생활권</strong><span class="plus">＋</span></summary><div class="detail">학교와 주거지 주변 위험 구간을 데이터로 관리하고 주민 신고 결과를 공개하겠습니다.</div></details>
+          <details><summary><span class="num">03</span><strong>주민참여 예산 강화</strong><span class="plus">＋</span></summary><div class="detail">제안부터 심사, 반영, 집행까지 한눈에 확인하는 주민참여 예산 공개 체계를 만들겠습니다.</div></details>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>걸어온 길</h2></div>
+        <div class="career"><time>현재</time><strong>해오름구 시의원 예비후보</strong></div>
+        <div class="career"><time>2022–25</time><strong>해오름구 주민자치회 간사</strong></div>
+        <div class="career"><time>2019–22</time><strong>우리동네 돌봄네트워크 운영위원</strong></div>
+      </section>
+
+      <p class="notice">본 페이지의 인물·지역·경력·공약은 디자인 시연을 위한 가상 정보입니다.</p>
+    </main>
+  </div>
+
+  <div class="bottom">
+    <button class="outline" type="button" data-demo="정책 제안 연결">의견 보내기</button>
+    <button class="primary" type="button" data-demo="소식받기 신청">박서린 소식받기</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const toast = document.querySelector('#toast');
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message + ' 기능이 연결되는 샘플입니다.';
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+    document.querySelectorAll('[data-demo]').forEach(button => {
+      button.addEventListener('click', () => showToast(button.dataset.demo));
+    });
+    async function shareProfile() {
+      const data = { title: document.title, text: '박서린 디지털 명함을 확인해 보세요.', url: location.href };
+      if (navigator.share) {
+        try { await navigator.share(data); } catch (error) { if (error.name !== 'AbortError') showToast('공유'); }
+      } else {
+        try { await navigator.clipboard.writeText(location.href); showToast('주소 복사'); }
+        catch { showToast('공유'); }
+      }
+    }
+    document.querySelector('#share').addEventListener('click', shareProfile);
+    document.querySelector('#share2').addEventListener('click', shareProfile);
+  </script>
+</body>
+</html>
