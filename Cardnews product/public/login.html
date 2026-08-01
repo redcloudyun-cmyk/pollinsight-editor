@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLLINSIGHT | 로그인</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    :root { font-family: Pretendard, system-ui, sans-serif; color: #e5edf9; background: #0b1220; }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: radial-gradient(circle at top left, #1e3a8a55, transparent 42%), #0b1220; }
+    main { width: min(920px, calc(100vw - 32px)); display: grid; grid-template-columns: 1fr 430px; overflow: hidden; border: 1px solid #26354f; border-radius: 22px; background: #111b2e; box-shadow: 0 28px 70px #0007; }
+    .intro { padding: 58px; background: linear-gradient(145deg, #193a76, #121f38 70%); }
+    .mark { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 13px; background: #3b82f6; font-weight: 900; letter-spacing: .08em; }
+    h1 { margin: 26px 0 12px; font-size: 34px; } p { color: #a9b8cf; line-height: 1.6; }
+    .tiers { display: flex; gap: 8px; margin-top: 30px; } .tier { padding: 8px 10px; border: 1px solid #416393; border-radius: 8px; font-size: 12px; }
+    form { padding: 42px; } h2 { margin: 0 0 26px; font-size: 22px; } label { display: grid; gap: 8px; margin: 15px 0; font-size: 13px; color: #bcc9dc; }
+    input, select { box-sizing: border-box; width: 100%; border: 1px solid #334765; background: #0b1424; color: #f5f8ff; border-radius: 9px; padding: 12px; font: inherit; }
+    .remember { display: flex; align-items: center; gap: 8px; margin-top: 14px; color: #b7c5da; font-size: 13px; } .remember input { width: auto; accent-color: #3b82f6; }
+    button { width: 100%; border: 0; border-radius: 9px; padding: 13px; margin-top: 12px; background: #3b82f6; color: white; font: inherit; font-weight: 800; cursor: pointer; }
+    button:hover { background: #2563eb; } .link { display: block; margin-top: 18px; text-align: center; color: #91b7ff; font-size: 13px; cursor: pointer; } .hidden { display: none; }.divider{display:flex;align-items:center;gap:10px;margin:24px 0 8px;color:#71829c;font-size:11px}.divider:before,.divider:after{content:'';height:1px;flex:1;background:#2b3d59}.providers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.provider{margin:0;padding:10px;background:#18253b;border:1px solid #324660;color:#93a7c4;font-size:12px}.provider:disabled{cursor:not-allowed;opacity:.7}
+    #message { min-height: 18px; margin-top: 14px; color: #fca5a5; font-size: 13px; } .notice { font-size: 12px; color: #8ea0bd; margin-top: 24px; }
+    @media (max-width: 720px) { main { grid-template-columns: 1fr; } .intro { display: none; } form { padding: 32px 24px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="intro"><div class="mark">PI</div><h1>정치 커뮤니케이션을<br>더 빠르고 명확하게.</h1><p>후보자와 캠페인 팀을 위한 디자인 스튜디오입니다. 계정별 브랜드 테마와 작업 공간을 제공합니다.</p><div class="tiers"><span class="tier">무료</span><span class="tier">베이직</span><span class="tier">프리미엄</span></div></section>
+    <form id="auth-form"><h2 id="form-title">로그인</h2>
+      <div id="register-fields" class="hidden"><label>이름<input id="displayName" maxlength="100" placeholder="표시할 이름"></label><label>소속 테마<select id="party"><option value="democratic">민주당 계열</option><option value="people_power">국민의힘 계열</option><option value="justice">정의당 계열</option><option value="independent" selected>무소속</option></select></label></div>
+      <label>이메일<input id="email" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+      <label>비밀번호<input id="password" type="password" autocomplete="current-password" required minlength="8" placeholder="8자 이상 입력"></label>
+      <label class="remember"><input id="remember" type="checkbox"> 이 기기에서 로그인 유지</label>
+      <button id="submit" type="submit">로그인</button><span id="switch" class="link">계정이 없으신가요? 회원가입</span><p id="message"></p><p class="notice">가입 시 무료 플랜이 적용됩니다. 플랜 변경과 결제는 준비 중입니다.</p>
+      <div class="divider">또는</div><div class="providers"><button class="provider" type="button" disabled title="OAuth 앱 등록 후 활성화">Google</button><button class="provider" type="button" disabled title="OAuth 앱 등록 후 활성화">NAVER</button><button class="provider" type="button" disabled title="OAuth 앱 등록 후 활성화">Kakao</button></div>
+    </form>
+  </main>
+  <script>
+    let registerMode = false;
+    const API_BASE = location.port === '3000' ? '' : 'http://localhost:3000';
+    const api = path => `${API_BASE}${path}`;
+    const byId = id => document.getElementById(id);
+    async function checkSession() { const res = await fetch(api('/api/auth/me')); if (res.ok) location.href = '/index.html'; }
+    checkSession();
+    byId('switch').onclick = () => { registerMode = !registerMode; byId('register-fields').classList.toggle('hidden', !registerMode); byId('form-title').textContent = registerMode ? '회원가입' : '로그인'; byId('submit').textContent = registerMode ? '무료로 시작하기' : '로그인'; byId('switch').textContent = registerMode ? '이미 계정이 있으신가요? 로그인' : '계정이 없으신가요? 회원가입'; byId('message').textContent = ''; };
+    byId('auth-form').onsubmit = async event => { event.preventDefault(); const body = { email: byId('email').value, password: byId('password').value, remember: byId('remember').checked }; if (registerMode) { body.displayName = byId('displayName').value; body.party = byId('party').value; } const res = await fetch(api(registerMode ? '/api/auth/register' : '/api/auth/login'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), credentials: 'include' }); const data = await res.json(); if (!res.ok) { byId('message').textContent = data.message || '요청을 처리할 수 없습니다.'; return; } location.href = '/index.html'; };
+  </script>
+</body>
+</html>
