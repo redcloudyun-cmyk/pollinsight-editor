@@ -896,7 +896,7 @@ export const UIController = {
         }
         const workspaceColor = document.getElementById('workspace-bg-color');
         const workspace = document.getElementById('canvas-scroll-area');
-        const savedWorkspaceColor = localStorage.getItem('pollinsight-workspace-color') || '#1e293b';
+        const savedWorkspaceColor = localStorage.getItem('pollinsight-workspace-color') || '#f1f5f9';
         if (workspace) workspace.style.backgroundColor = savedWorkspaceColor;
         if (workspaceColor) {
             workspaceColor.value = savedWorkspaceColor;

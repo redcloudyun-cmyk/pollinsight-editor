@@ -20,7 +20,8 @@
     <style>
         body {
             font-family: 'Pretendard', sans-serif;
-            background: #0f172a;
+            background: #ffffff;
+            color: #0f172a;
             overflow: hidden;
             margin: 0;
         }
@@ -31,7 +32,7 @@
             align-items: center;
             justify-content: center;
             overflow: auto;
-            background: #1e293b;
+            background: #f1f5f9;
             position: relative;
         }
 
@@ -63,14 +64,14 @@
         .continuous-page-preview {
             position: relative;
             cursor: pointer;
-            border: 1px solid #475569;
-            box-shadow: 0 18px 34px -20px rgba(0, 0, 0, .9);
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
             transition: opacity .15s ease, transform .15s ease, border-color .15s ease;
         }
 
         .continuous-page-preview:hover {
             opacity: 1;
-            border-color: #60a5fa;
+            border-color: #2563eb;
             transform: translateY(-2px);
         }
 
@@ -78,7 +79,7 @@
             display: block;
             max-width: 100%;
             height: auto;
-            opacity: .72;
+            opacity: .9;
         }
 
         .continuous-page-preview span {
@@ -87,8 +88,9 @@
             left: 9px;
             padding: 3px 7px;
             border-radius: 999px;
-            background: rgba(15, 23, 42, .88);
-            color: #bfdbfe;
+            background: rgba(255, 255, 255, 0.92);
+            color: #1e40af;
+            border: 1px solid #cbd5e1;
             font-size: 11px;
             font-weight: 700;
         }
@@ -103,7 +105,7 @@
 
         #cardCanvas {
             background: transparent;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
             display: block;
         }
 
@@ -125,21 +127,21 @@
         .page-side-toolbar button {
             width: 36px;
             height: 36px;
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #94a3b8;
+            color: #475569;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: 0.2s;
         }
 
         .page-side-toolbar button:hover {
-            background: #334155;
-            color: #3b82f6;
+            background: #f1f5f9;
+            color: #2563eb;
         }
 
         .page-current-status {
@@ -150,11 +152,11 @@
             align-items: center;
             justify-content: center;
             gap: 2px;
-            color: #e2e8f0;
-            background: #0f172a;
-            border: 1px solid #334155;
+            color: #0f172a;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             font-size: 12px;
             font-weight: 800;
             line-height: 1;
@@ -162,7 +164,7 @@
         }
 
         .page-current-status small {
-            color: #60a5fa;
+            color: #2563eb;
             font-size: 9px;
             font-weight: 700;
         }
@@ -173,7 +175,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #475569;
+            background: #cbd5e1;
             border-radius: 4px;
         }
 
@@ -192,17 +194,17 @@
             overflow: hidden;
             white-space: pre-wrap;
             word-break: break-all;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
         }
 
         #floating-toolbar {
             position: fixed;
             display: none;
             z-index: 900;
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
             border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
             padding: 6px;
             flex-direction: row;
             gap: 4px;
@@ -219,17 +221,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #94a3b8;
+            color: #475569;
         }
 
         .ft-btn:hover {
-            background: #334155;
-            color: #3b82f6;
+            background: #f1f5f9;
+            color: #2563eb;
         }
 
         .tab-btn.active {
-            color: #ffffff;
-            background: #1e293b;
+            color: #2563eb;
+            background: #eff6ff;
         }
 
         .tab-content {
@@ -246,10 +248,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #334155;
-            background: #1e293b;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
             cursor: pointer;
-            color: #94a3b8;
+            color: #475569;
             transition: 0.15s;
         }
 
@@ -269,8 +271,8 @@
         }
 
         :root {
-            --party-accent: #3b82f6;
-            --party-accent-dark: #2563eb;
+            --party-accent: #2563eb;
+            --party-accent-dark: #1d4ed8;
         }
 
         .theme-accent {
@@ -522,22 +524,22 @@
     </style>
 </head>
 
-<body class="flex flex-col h-screen w-full select-none text-slate-200">
+<body class="flex flex-col h-screen w-full select-none text-slate-800 bg-white">
 
     <!-- Header bar -->
     <header id="app-header"
-        class="h-14 bg-[#0f172a] border-b border-slate-800 text-white flex items-center justify-between px-5 shrink-0 z-30 shadow-md">
+        class="h-14 bg-white border-b border-slate-200 text-slate-900 flex items-center justify-between px-5 shrink-0 z-30 shadow-sm">
         <div class="flex items-center gap-4">
             <div class="theme-accent text-white font-black px-2.5 py-1 rounded-lg text-sm tracking-widest shadow-sm">PI
             </div>
-            <div class="brand-name font-extrabold text-base tracking-tight text-white flex items-center gap-2">
+            <div class="brand-name font-extrabold text-base tracking-tight text-slate-900 flex items-center gap-2">
                 POLLINSIGHT <span
-                    class="studio-badge text-xs font-medium text-slate-400 bg-slate-800 px-2 py-0.5 rounded-full border border-slate-700">Design
+                    class="studio-badge text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">Design
                     Studio</span>
             </div>
-            <div class="brand-divider h-5 w-px bg-slate-800 mx-2"></div>
+            <div class="brand-divider h-5 w-px bg-slate-200 mx-2"></div>
             <input type="text" id="project-title" value="2026년 대외 홍보 카드뉴스 템플릿"
-                class="bg-[#1e293b] border border-slate-800 text-sm font-semibold text-white px-3 py-1.5 w-72 focus:outline-none focus:border-blue-500 rounded-lg transition">
+                class="bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-900 px-3 py-1.5 w-72 focus:outline-none focus:border-blue-500 focus:bg-white rounded-lg transition">
         </div>
 
         <!-- Controls action buttons -->
@@ -549,27 +551,27 @@
             <button id="btn-mobile-properties" class="mobile-only mobile-header-btn" type="button" title="속성 패널"><i
                     class="ph-bold ph-sliders-horizontal text-lg"></i></button>
             <a id="btn-admin" href="/admin.html"
-                class="hidden bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-700">관리자</a>
+                class="hidden bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 transition">관리자</a>
             <a href="/workspace.html"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-700">내
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 transition">내
                 작업</a>
             <a href="/account.html"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-700">내
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 transition">내
                 구독</a>
             <button id="btn-logout" title="로그아웃"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-700"><span
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 transition"><span
                     id="account-name">계정</span> · <span id="account-tier">무료</span></button>
             <button id="btn-new-project" title="새 프로젝트"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-700 flex items-center gap-1.5 transition">
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-200 flex items-center gap-1.5 transition">
                 <i class="ph-bold ph-file-plus"></i> 새로 만들기
             </button>
             <button id="btn-open-project" title="디자인 파일 열기"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-700 flex items-center gap-1.5 transition">
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-200 flex items-center gap-1.5 transition">
                 <i class="ph-bold ph-folder-open"></i> 열기
             </button>
             <input id="project-upload" type="file" accept="application/json,.json" class="hidden">
             <button id="btn-play-slide"
-                class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-700 flex items-center gap-1.5 transition">
+                class="bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 px-4 py-1.5 rounded-lg text-sm font-bold shadow-sm border border-slate-200 flex items-center gap-1.5 transition">
                 <i class="ph-bold ph-play"></i> 슬라이드 쇼
             </button>
             <button id="btn-db-save"
@@ -594,19 +596,19 @@
                     <i class="ph-bold ph-download-simple"></i> 다운로드 <i class="ph ph-caret-down text-xs"></i>
                 </button>
                 <div
-                    class="absolute right-0 top-full mt-2 w-48 bg-slate-900 border border-slate-800 rounded-lg shadow-2xl py-1 hidden group-hover:block group-focus-within:block z-50">
+                    class="absolute right-0 top-full mt-2 w-48 bg-white border border-slate-200 rounded-lg shadow-xl py-1 hidden group-hover:block group-focus-within:block z-50">
                     <button id="btn-save-png"
-                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white flex items-center gap-2.5 transition border-b border-slate-800/50"><i
-                            class="ph ph-image text-sm text-blue-400"></i> PNG 이미지 저장</button>
+                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 flex items-center gap-2.5 transition border-b border-slate-100"><i
+                            class="ph ph-image text-sm text-blue-600"></i> PNG 이미지 저장</button>
                     <button id="btn-save-jpg"
-                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white flex items-center gap-2.5 transition border-b border-slate-800/50"><i
-                            class="ph ph-image text-sm text-green-400"></i> JPG 고해상도 저장</button>
+                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 flex items-center gap-2.5 transition border-b border-slate-100"><i
+                            class="ph ph-image text-sm text-green-600"></i> JPG 고해상도 저장</button>
                     <button id="btn-save-pdf"
-                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white flex items-center gap-2.5 transition border-b border-slate-800/50"><i
-                            class="ph ph-file-pdf text-sm text-red-400"></i> PDF 문서 출력</button>
+                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 flex items-center gap-2.5 transition border-b border-slate-100"><i
+                            class="ph ph-file-pdf text-sm text-red-600"></i> PDF 문서 출력</button>
                     <button id="btn-save-pptx"
-                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white flex items-center gap-2.5 transition"><i
-                            class="ph ph-file-ppt text-sm text-yellow-400"></i> PowerPoint (PPTX) 다운</button>
+                        class="w-full text-left px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 flex items-center gap-2.5 transition"><i
+                            class="ph ph-file-ppt text-sm text-amber-600"></i> PowerPoint (PPTX) 다운</button>
                 </div>
             </div>
         </div>
@@ -615,63 +617,63 @@
     <div class="flex flex-1 overflow-hidden relative">
         <!-- Left vertical sidebar tabs list -->
         <aside id="tool-rail"
-            class="w-[72px] bg-[#0f172a] text-slate-400 border-r border-slate-800 flex flex-col items-center py-4 gap-3.5 z-20 shrink-0">
+            class="w-[72px] bg-white text-slate-500 border-r border-slate-200 flex flex-col items-center py-4 gap-3.5 z-20 shrink-0">
             <!-- 페이지 설정 -->
-            <button class="tab-btn active w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn active w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-pages">
-                <div class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full">
+                <div class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-files text-xl"></i></div>
                 <span class="text-[9px] font-bold">페이지</span>
             </button>
             <!-- 템플릿 -->
-            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-templates">
                 <div
-                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full hidden">
+                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full hidden">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-layout text-xl"></i></div>
                 <span class="text-[9px] font-bold">템플릿</span>
             </button>
             <!-- 요소 -->
-            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-assets">
                 <div
-                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full hidden">
+                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full hidden">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-shapes text-xl"></i></div>
                 <span class="text-[9px] font-bold">요소</span>
             </button>
             <!-- 테이블 -->
-            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-tables">
                 <div
-                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full hidden">
+                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full hidden">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-table text-xl"></i></div>
                 <span class="text-[9px] font-bold">테이블</span>
             </button>
             <!-- 차트 -->
-            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-charts">
                 <div
-                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full hidden">
+                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full hidden">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-chart-bar text-xl"></i></div>
                 <span class="text-[9px] font-bold">차트</span>
             </button>
             <!-- 레이어 -->
-            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-white group relative pb-1"
+            <button class="tab-btn w-full flex flex-col items-center gap-1 hover:text-blue-600 group relative pb-1"
                 data-target="tab-layers">
                 <div
-                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-r-full hidden">
+                    class="indicator absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-r-full hidden">
                 </div>
-                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-800 transition"><i
+                <div class="icon-bg p-2 rounded-lg group-hover:bg-slate-100 transition"><i
                         class="ph-bold ph-stack text-xl"></i></div>
                 <span class="text-[9px] font-bold">레이어</span>
             </button>
@@ -679,18 +681,18 @@
 
         <!-- Left sub side panel details -->
         <aside id="left-panel"
-            class="w-[260px] bg-slate-900 border-r border-slate-800 flex flex-col z-20 shrink-0 shadow-[5px_0_15px_rgba(0,0,0,0.2)] h-full text-slate-300">
+            class="w-[260px] bg-white border-r border-slate-200 flex flex-col z-20 shrink-0 shadow-sm h-full text-slate-800">
 
             <!-- Pages & Presets -->
             <div id="tab-pages" class="tab-content active flex-col h-full">
-                <div class="p-3 border-b border-slate-800 bg-slate-950 flex justify-between items-center">
-                    <span class="font-extrabold text-xs text-slate-300">슬라이드 & 캔버스</span>
+                <div class="p-3 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+                    <span class="font-extrabold text-xs text-slate-800">슬라이드 & 캔버스</span>
                 </div>
-                <div class="p-4 border-b border-slate-800 space-y-4">
+                <div class="p-4 border-b border-slate-200 space-y-4">
                     <div>
-                        <label class="text-[11px] text-slate-500 block mb-1">사이즈 크기 프리셋</label>
+                        <label class="text-[11px] text-slate-600 block mb-1">사이즈 크기 프리셋</label>
                         <select id="canvas-preset"
-                            class="w-full p-2 bg-slate-800 border border-slate-700 rounded-md text-xs text-slate-300 cursor-pointer focus:outline-none focus:border-blue-500">
+                            class="w-full p-2 bg-slate-50 border border-slate-200 rounded-md text-xs text-slate-800 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white">
                             <option value="1080x1080">인스타그램 정방형 (1080x1080)</option>
                             <option value="1080x1350">인스타그램 세로형 (1080x1350)</option>
                             <option value="1920x1080">유튜브 / PPT 와이드 (1920x1080)</option>
@@ -698,69 +700,69 @@
                         </select>
                     </div>
                     <div>
-                        <label class="text-[11px] text-slate-500 block mb-1.5">직접 해상도 입력</label>
+                        <label class="text-[11px] text-slate-600 block mb-1.5">직접 해상도 입력</label>
                         <div class="flex gap-1.5 items-center">
                             <input type="number" id="canvas-w"
-                                class="w-full p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-center text-slate-200"
+                                class="w-full p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-center text-slate-800 focus:bg-white"
                                 value="1080">
-                            <span class="text-xs text-slate-600">x</span>
+                            <span class="text-xs text-slate-400">x</span>
                             <input type="number" id="canvas-h"
-                                class="w-full p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-center text-slate-200"
+                                class="w-full p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-center text-slate-800 focus:bg-white"
                                 value="1080">
                             <button id="btn-resize-canvas"
                                 class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-2.5 py-1.5 rounded transition shrink-0">적용</button>
                         </div>
                     </div>
-                    <div class="pt-3.5 border-t border-slate-800 flex flex-col gap-2">
-                        <label class="flex items-center gap-2 text-[11px] font-semibold text-slate-400 cursor-pointer">
+                    <div class="pt-3.5 border-t border-slate-200 flex flex-col gap-2">
+                        <label class="flex items-center gap-2 text-[11px] font-semibold text-slate-600 cursor-pointer">
                             <input type="checkbox" id="chk-show-grid"
-                                class="rounded bg-slate-800 border-slate-700 accent-blue-500">
+                                class="rounded bg-slate-50 border-slate-300 accent-blue-600">
                             격자선 표시 (Grid lines)
                         </label>
-                        <label class="flex items-center gap-2 text-[11px] font-semibold text-slate-400 cursor-pointer">
+                        <label class="flex items-center gap-2 text-[11px] font-semibold text-slate-600 cursor-pointer">
                             <input type="checkbox" id="chk-snap-align" checked
-                                class="rounded bg-slate-800 border-slate-700 accent-blue-500">
+                                class="rounded bg-slate-50 border-slate-300 accent-blue-600">
                             자동 자석 스냅 (Magnet snaps)
                         </label>
                     </div>
                 </div>
                 <div
-                    class="bg-slate-950 p-2 text-[10px] font-extrabold text-slate-400 text-center border-b border-slate-800">
+                    class="bg-slate-100 p-2 text-[10px] font-extrabold text-slate-700 text-center border-b border-slate-200">
                     슬라이드 전체 목록
                 </div>
-                <div class="px-3 pt-2 bg-slate-900/50"><button id="page-add-button" type="button"
-                        class="w-full rounded border border-blue-700 bg-blue-950/60 py-2 text-xs font-bold text-blue-200 hover:bg-blue-900">＋
+                <div class="px-3 pt-2 bg-slate-50/50"><button id="page-add-button" type="button"
+                        class="w-full rounded border border-blue-200 bg-blue-50 py-2 text-xs font-bold text-blue-700 hover:bg-blue-100">＋
                         페이지 추가</button></div>
-                <div id="page-list" class="flex-1 overflow-y-auto p-3.5 flex flex-col gap-3 bg-slate-900/50">
+                <div id="page-list" class="flex-1 overflow-y-auto p-3.5 flex flex-col gap-3 bg-slate-50/50">
                     <!-- page previews dynamically -->
                 </div>
             </div>
 
             <!-- Templates tab -->
             <div id="tab-templates" class="tab-content flex-col h-full hidden">
-                <div class="p-3 border-b border-slate-800 bg-slate-950"><span
-                        class="font-extrabold text-xs text-slate-300">레이아웃 템플릿</span></div>
+                <div class="p-3 border-b border-slate-200 bg-slate-50"><span
+                        class="font-extrabold text-xs text-slate-800">레이아웃 템플릿</span></div>
                 <div class="p-4 space-y-3.5 overflow-y-auto">
-                    <div class="flex items-center justify-between gap-2 border-b border-slate-800 pb-2">
-                        <span class="text-[11px] font-bold text-slate-400">공유 템플릿</span>
+                    <div class="flex items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                        <span class="text-[11px] font-bold text-slate-600">공유 템플릿</span>
                         <button id="refresh-published-templates"
-                            class="text-[10px] text-blue-400 hover:text-blue-300">새로고침</button>
+                            class="text-[10px] text-blue-600 hover:text-blue-700 font-semibold">새로고침</button>
                     </div>
                     <div id="published-template-list" class="space-y-2"></div>
-                    <div class="border-t border-slate-800 pt-3 text-[11px] font-bold text-slate-400">기본 템플릿</div>
+                    <div class="border-t border-slate-200 pt-3 text-[11px] font-bold text-slate-600">기본 템플릿</div>
                     <button id="temp-card-news"
-                        class="w-full text-left p-3 border border-slate-800 rounded-lg hover:border-blue-500 hover:bg-slate-800/40 transition flex flex-col gap-1">
-                        <span class="text-xs font-bold text-slate-200">1. 카드뉴스 포스터형</span>
+                        class="w-full text-left p-3 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50/50 bg-white transition flex flex-col gap-1">
+                        <span class="text-xs font-bold text-slate-800">1. 카드뉴스 포스터형</span>
                         <span class="text-[10px] text-slate-500">타이틀 및 서브 데코 요소 구성</span>
                     </button>
                     <button id="temp-infographic"
-                        class="w-full text-left p-3 border border-slate-800 rounded-lg hover:border-blue-500 hover:bg-slate-800/40 transition flex flex-col gap-1">
-                        <span class="text-xs font-bold text-slate-200">2. 통계 인포그래픽형</span>
+                        class="w-full text-left p-3 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50/50 bg-white transition flex flex-col gap-1">
+                        <span class="text-xs font-bold text-slate-800">2. 통계 인포그래픽형</span>
                         <span class="text-[10px] text-slate-500">막대 그래프 차트 구성 레이아웃</span>
                     </button>
                     <button id="temp-comparison"
-                        class="w-full text-left p-3 border border-slate-800 rounded-lg hover:border-blue-500 hover:bg-slate-800/40 transition flex flex-col gap-1">
-                        <span class="text-xs font-bold text-slate-200">3. 대안비교표 테이블형</span>
+                        class="w-full text-left p-3 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50/50 bg-white transition flex flex-col gap-1">
+                        <span class="text-xs font-bold text-slate-800">3. 대안비교표 테이블형</span>
                         <span class="text-[10px] text-slate-500">정책 격자 테이블 비교 요약 양식</span>
                     </button>
                 </div>
@@ -768,64 +770,64 @@
 
             <!-- Shapes & Assets tab -->
             <div id="tab-assets" class="tab-content flex-col h-full hidden">
-                <div class="p-3 border-b border-slate-800 bg-slate-950"><span
-                        class="font-extrabold text-xs text-slate-300">디자인 요소 추가</span></div>
+                <div class="p-3 border-b border-slate-200 bg-slate-50"><span
+                        class="font-extrabold text-xs text-slate-800">디자인 요소 추가</span></div>
                 <div class="p-4 space-y-4 overflow-y-auto">
                     <button id="add-text"
-                        class="w-full py-2 bg-slate-800 border border-slate-700 rounded-lg hover:bg-slate-700 flex items-center justify-center gap-2 text-sm font-bold text-slate-200 transition">
-                        <i class="ph-bold ph-text-t text-base text-blue-400"></i> 글자상자(텍스트) 추가
+                        class="w-full py-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 flex items-center justify-center gap-2 text-sm font-bold text-slate-800 transition">
+                        <i class="ph-bold ph-text-t text-base text-blue-600"></i> 글자상자(텍스트) 추가
                     </button>
 
                     <div class="grid grid-cols-2 gap-2">
                         <button id="add-rect"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
-                            <div class="w-7 h-7 bg-blue-500/80 rounded"></div><span
-                                class="text-[10px] font-bold text-slate-300">사각형</span>
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
+                            <div class="w-7 h-7 bg-blue-500 rounded"></div><span
+                                class="text-[10px] font-bold text-slate-700">사각형</span>
                         </button>
                         <button id="add-circle"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
-                            <div class="w-7 h-7 bg-emerald-500/80 rounded-full"></div><span
-                                class="text-[10px] font-bold text-slate-300">원형</span>
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
+                            <div class="w-7 h-7 bg-emerald-500 rounded-full"></div><span
+                                class="text-[10px] font-bold text-slate-700">원형</span>
                         </button>
                         <button id="add-triangle"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
                             <div
-                                class="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-b-[28px] border-b-yellow-500/80">
-                            </div><span class="text-[10px] font-bold text-slate-300">삼각형</span>
+                                class="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-b-[28px] border-b-amber-500">
+                            </div><span class="text-[10px] font-bold text-slate-700">삼각형</span>
                         </button>
                         <button id="add-star"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
-                            <i class="ph-fill ph-star text-2xl text-purple-500/80"></i><span
-                                class="text-[10px] font-bold text-slate-300">오각별</span>
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
+                            <i class="ph-fill ph-star text-2xl text-purple-600"></i><span
+                                class="text-[10px] font-bold text-slate-700">오각별</span>
                         </button>
                         <button id="add-polygon"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
-                            <i class="ph-fill ph-polygon text-2xl text-rose-500/80"></i><span
-                                class="text-[10px] font-bold text-slate-300">다각형</span>
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
+                            <i class="ph-fill ph-polygon text-2xl text-rose-600"></i><span
+                                class="text-[10px] font-bold text-slate-700">다각형</span>
                         </button>
                         <button id="add-line"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition">
-                            <div class="w-8 h-1 bg-slate-400 rounded mt-3"></div><span
-                                class="text-[10px] font-bold text-slate-300">선분</span>
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition">
+                            <div class="w-8 h-1 bg-slate-500 rounded mt-3"></div><span
+                                class="text-[10px] font-bold text-slate-700">선분</span>
                         </button>
                         <button id="add-arrow"
-                            class="py-2.5 border border-slate-800 rounded-lg bg-slate-800/30 hover:bg-slate-800 hover:border-slate-700 flex flex-col items-center gap-1.5 transition col-span-2">
+                            class="py-2.5 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 flex flex-col items-center gap-1.5 transition col-span-2">
                             <div class="flex items-center gap-0.5 mt-2">
-                                <div class="w-8 h-1 bg-blue-500"></div>
-                                <i class="ph-bold ph-caret-right text-blue-500 -ml-1 text-sm"></i>
+                                <div class="w-8 h-1 bg-blue-600"></div>
+                                <i class="ph-bold ph-caret-right text-blue-600 -ml-1 text-sm"></i>
                             </div>
-                            <span class="text-[10px] font-bold text-slate-300">방향 화살표</span>
+                            <span class="text-[10px] font-bold text-slate-700">방향 화살표</span>
                         </button>
                     </div>
 
-                    <div class="w-full h-px bg-slate-800 my-2"></div>
+                    <div class="w-full h-px bg-slate-200 my-2"></div>
 
                     <!-- PC uploads -->
                     <div class="relative">
                         <input type="file" id="img-upload" accept="image/*"
                             class="absolute inset-0 opacity-0 cursor-pointer">
                         <button
-                            class="w-full py-2 bg-emerald-950 border border-emerald-800 text-emerald-300 rounded-lg hover:bg-emerald-900 flex items-center justify-center gap-2 text-xs font-bold transition">
+                            class="w-full py-2 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg hover:bg-emerald-100 flex items-center justify-center gap-2 text-xs font-bold transition">
                             <i class="ph-bold ph-image text-sm"></i> PC 사진 이미지 업로드
                         </button>
                     </div>
@@ -834,7 +836,7 @@
                         <input type="file" id="legacy-font-upload" accept=".ttf,.otf"
                             class="absolute inset-0 opacity-0 cursor-pointer">
                         <button
-                            class="w-full py-2 bg-purple-950 border border-purple-800 text-purple-300 rounded-lg hover:bg-purple-900 flex items-center justify-center gap-2 text-xs font-bold transition">
+                            class="w-full py-2 bg-purple-50 border border-purple-200 text-purple-800 rounded-lg hover:bg-purple-100 flex items-center justify-center gap-2 text-xs font-bold transition">
                             <i class="ph-bold ph-text-aa text-sm"></i> PC 폰트 파일 추가 (.ttf)
                         </button>
                     </div>
@@ -843,15 +845,15 @@
 
             <!-- Tables tab -->
             <div id="tab-tables" class="tab-content flex-col h-full hidden">
-                <div class="p-3 border-b border-slate-800 bg-slate-950"><span
-                        class="font-extrabold text-xs text-slate-300">격자 표 추가</span></div>
+                <div class="p-3 border-b border-slate-200 bg-slate-50"><span
+                        class="font-extrabold text-xs text-slate-800">격자 표 추가</span></div>
                 <div class="p-4 space-y-4 overflow-y-auto">
                     <button id="add-table"
-                        class="w-full py-2 bg-blue-950 border border-blue-800 text-blue-300 rounded-lg hover:bg-blue-900 flex items-center justify-center gap-2 text-sm font-bold transition">
+                        class="w-full py-2 bg-blue-50 border border-blue-200 text-blue-800 rounded-lg hover:bg-blue-100 flex items-center justify-center gap-2 text-sm font-bold transition">
                         <i class="ph-bold ph-table text-sm"></i> 기본 표(3x3) 캔버스에 추가
                     </button>
                     <div
-                        class="text-[10px] text-slate-500 leading-relaxed bg-slate-950/40 p-3 rounded-lg border border-slate-800/40">
+                        class="text-[10px] text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
                         * 표 요소를 더블 클릭하면 각각의 셀 내용을 직접 입력/수정할 수 있습니다. <br>
                         * 오른쪽 편집 패널에서 행/열을 실시간 가감 조절할 수 있습니다.
                     </div>
@@ -860,33 +862,33 @@
 
             <!-- Charts tab -->
             <div id="tab-charts" class="tab-content flex-col h-full hidden">
-                <div class="p-3 border-b border-slate-800 bg-slate-950"><span
-                        class="font-extrabold text-xs text-slate-300">인터랙티브 차트</span></div>
+                <div class="p-3 border-b border-slate-200 bg-slate-50"><span
+                        class="font-extrabold text-xs text-slate-800">인터랙티브 차트</span></div>
                 <div class="p-4 space-y-3 overflow-y-auto">
                     <button id="add-chart-bar"
-                        class="w-full py-2.5 bg-slate-800 border border-slate-700 hover:bg-slate-700 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-200">
-                        <i class="ph ph-chart-bar text-sm text-blue-400"></i> 세로/가로 막대 그래프
+                        class="w-full py-2.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-800">
+                        <i class="ph ph-chart-bar text-sm text-blue-600"></i> 세로/가로 막대 그래프
                     </button>
                     <button id="add-chart-line"
-                        class="w-full py-2.5 bg-slate-800 border border-slate-700 hover:bg-slate-700 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-200">
-                        <i class="ph ph-chart-line text-sm text-emerald-400"></i> 통계 추이 꺾은선 차트
+                        class="w-full py-2.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-800">
+                        <i class="ph ph-chart-line text-sm text-emerald-600"></i> 통계 추이 꺾은선 차트
                     </button>
                     <button id="add-chart-pie"
-                        class="w-full py-2.5 bg-slate-800 border border-slate-700 hover:bg-slate-700 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-200">
-                        <i class="ph ph-chart-pie text-sm text-yellow-400"></i> 점유율 원형 차트
+                        class="w-full py-2.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-800">
+                        <i class="ph ph-chart-pie text-sm text-amber-600"></i> 점유율 원형 차트
                     </button>
                     <button id="add-chart-donut"
-                        class="w-full py-2.5 bg-slate-800 border border-slate-700 hover:bg-slate-700 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-200">
-                        <i class="ph ph-chart-donut text-sm text-purple-400"></i> 도넛 그래프
+                        class="w-full py-2.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded-lg flex items-center justify-center gap-2 text-xs font-bold transition text-slate-800">
+                        <i class="ph ph-chart-donut text-sm text-purple-600"></i> 도넛 그래프
                     </button>
                 </div>
             </div>
 
             <!-- Layers tab -->
             <div id="tab-layers" class="tab-content flex-col h-full hidden">
-                <div class="p-3 border-b border-slate-800 bg-slate-950"><span
-                        class="font-extrabold text-xs text-slate-300">레이어 순서 및 잠금</span></div>
-                <div id="layer-list" class="flex-1 overflow-y-auto p-3 flex flex-col gap-2 bg-slate-900/40">
+                <div class="p-3 border-b border-slate-200 bg-slate-50"><span
+                        class="font-extrabold text-xs text-slate-800">레이어 순서 및 잠금</span></div>
+                <div id="layer-list" class="flex-1 overflow-y-auto p-3 flex flex-col gap-2 bg-slate-50/50">
                     <!-- Layer items dynamically -->
                 </div>
             </div>
@@ -909,7 +911,7 @@
                 <button id="side-dup-page" title="현재 페이지 복제"><i class="ph ph-copy text-lg"></i></button>
                 <button id="side-page-up" title="페이지 위로 이동"><i class="ph ph-caret-up text-lg"></i></button>
                 <button id="side-page-down" title="페이지 아래로 이동"><i class="ph ph-caret-down text-lg"></i></button>
-                <button id="side-del-page" title="현재 페이지 삭제" class="hover:text-red-500"><i
+                <button id="side-del-page" title="현재 페이지 삭제" class="hover:text-red-600"><i
                         class="ph ph-trash text-lg"></i></button>
             </div>
 
@@ -919,46 +921,46 @@
             <!-- Floating fast action toolbar -->
             <div id="floating-toolbar" class="flex items-center gap-1">
                 <button id="ft-group" class="ft-btn" title="그룹화 (Ctrl+G)"><i class="ph-bold ph-intersect"></i></button>
-                <div class="w-px bg-slate-800 h-5 my-1 mx-0.5"></div>
+                <div class="w-px bg-slate-200 h-5 my-1 mx-0.5"></div>
                 <button id="ft-lock" class="ft-btn" title="잠금"><i class="ph-bold ph-lock-key-open"></i></button>
                 <button id="ft-copy" class="ft-btn" title="복사 (Ctrl+C)"><i class="ph-bold ph-copy"></i></button>
-                <button id="ft-delete" class="ft-btn text-red-400 hover:bg-red-950/40" title="삭제 (Del)"><i
+                <button id="ft-delete" class="ft-btn text-red-600 hover:bg-red-50" title="삭제 (Del)"><i
                         class="ph-bold ph-trash"></i></button>
             </div>
 
             <!-- Zoom actions floating panel -->
             <div id="zoom-controls"
-                class="fixed bottom-6 bg-slate-900/90 border border-slate-800 rounded-full shadow-2xl px-3 py-1.5 flex items-center gap-2 z-30 text-slate-300 text-sm left-1/2 transform -translate-x-1/2 backdrop-blur-md"
+                class="fixed bottom-6 bg-white/95 border border-slate-200 rounded-full shadow-xl px-3 py-1.5 flex items-center gap-2 z-30 text-slate-700 text-sm left-1/2 transform -translate-x-1/2 backdrop-blur-md"
                 style="margin-left: 120px;">
                 <button id="btn-zoom-out"
-                    class="w-8 h-8 rounded-full hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition"><i
+                    class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-600 hover:text-slate-900 transition"><i
                         class="ph-bold ph-minus"></i></button>
                 <span id="zoom-level"
-                    class="w-14 text-center text-xs font-black tracking-wide text-blue-400">100%</span>
+                    class="w-14 text-center text-xs font-black tracking-wide text-blue-600">100%</span>
                 <button id="btn-zoom-in"
-                    class="w-8 h-8 rounded-full hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition"><i
+                    class="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-600 hover:text-slate-900 transition"><i
                         class="ph-bold ph-plus"></i></button>
-                <div class="zoom-separator h-4 w-px bg-slate-800 mx-1"></div>
+                <div class="zoom-separator h-4 w-px bg-slate-200 mx-1"></div>
                 <button id="btn-zoom-fit"
-                    class="text-xs font-bold px-3 py-1.5 rounded-full hover:bg-slate-800 hover:text-white transition">화면
+                    class="text-xs font-bold px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition">화면
                     맞춤</button>
             </div>
         </main>
 
         <!-- Right Side Properties context panels -->
         <aside id="properties-panel"
-            class="w-[300px] bg-slate-900 border-l border-slate-800 flex flex-col z-20 h-full shrink-0 text-slate-300">
+            class="w-[300px] bg-white border-l border-slate-200 flex flex-col z-20 h-full shrink-0 text-slate-800">
             <div class="flex-1 overflow-y-auto p-4 space-y-5">
 
                 <!-- Gemini AI Suggest assistant -->
-                <div class="border border-slate-800 rounded-xl bg-slate-950/40 shadow-xl overflow-hidden">
-                    <div class="flex items-center justify-between p-3 bg-slate-950 border-b border-slate-800">
-                        <h3 class="font-extrabold text-slate-200 text-xs flex items-center gap-1.5"><i
-                                class="ph-fill ph-sparkle text-blue-400 animate-pulse"></i> AI 디자인 어시스턴트</h3>
+                <div class="border border-blue-200 rounded-xl bg-blue-50/40 shadow-sm overflow-hidden">
+                    <div class="flex items-center justify-between p-3 bg-blue-100/50 border-b border-blue-200">
+                        <h3 class="font-extrabold text-slate-900 text-xs flex items-center gap-1.5"><i
+                                class="ph-fill ph-sparkle text-blue-600 animate-pulse"></i> AI 디자인 어시스턴트</h3>
                     </div>
                     <div class="p-3 space-y-2.5">
                         <textarea id="ai-element-prompt"
-                            class="w-full text-xs bg-slate-900 border border-slate-800 rounded-lg p-2.5 resize-none focus:outline-none focus:border-blue-500 text-slate-200"
+                            class="w-full text-xs bg-white border border-slate-200 rounded-lg p-2.5 resize-none focus:outline-none focus:border-blue-500 text-slate-800"
                             rows="2.5" placeholder="예: 글자 크기를 더 크게하고 테두리 색을 빨간색으로 변경해줘"></textarea>
                         <button id="btn-ai-apply"
                             class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg text-xs hover:bg-blue-700 transition">변환
@@ -967,93 +969,93 @@
                 </div>
 
                 <!-- Empty Selection state -->
-                <div id="empty-state" class="text-xs text-slate-500 text-center py-16">
-                    <i class="ph-light ph-cursor-click text-4xl mb-3 text-slate-700"></i>
+                <div id="empty-state" class="text-xs text-slate-400 text-center py-16">
+                    <i class="ph-light ph-cursor-click text-4xl mb-3 text-slate-300"></i>
                     <p class="leading-relaxed">요소를 마우스로 선택하면<br>세부 속성 편집창이 나타납니다.</p>
                 </div>
 
                 <!-- Active elements details adjustment forms -->
                 <div id="advanced-panel" style="display: none;" class="space-y-4">
                     <div class="flex justify-between items-center mb-3">
-                        <h4 id="adv-panel-title" class="m-0 text-xs text-slate-400 font-extrabold">요소 서식조절</h4>
+                        <h4 id="adv-panel-title" class="m-0 text-xs text-slate-600 font-extrabold">요소 서식조절</h4>
                         <span id="adv-status-badge"
-                            class="text-[10px] bg-blue-950 text-blue-400 border border-blue-800 px-2.5 py-0.5 rounded-full font-bold">선택됨</span>
+                            class="text-[10px] bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-0.5 rounded-full font-bold">선택됨</span>
                     </div>
 
                     <!-- Grouping element actions -->
                     <div id="adv-group-controls"
-                        class="grid grid-cols-2 gap-2 mb-3 bg-slate-950/50 p-2 rounded-lg border border-slate-800/40">
+                        class="grid grid-cols-2 gap-2 mb-3 bg-slate-50 p-2 rounded-lg border border-slate-200">
                         <button id="btn-group-action"
-                            class="py-1.5 bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-slate-200 rounded-md flex items-center justify-center gap-1.5 transition">
+                            class="py-1.5 bg-white hover:bg-slate-100 text-[10px] font-bold text-slate-800 border border-slate-200 rounded-md flex items-center justify-center gap-1.5 transition">
                             <i class="ph ph-intersect"></i> 그룹화
                         </button>
                         <button id="btn-ungroup-action"
-                            class="py-1.5 bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-slate-200 rounded-md flex items-center justify-center gap-1.5 transition">
+                            class="py-1.5 bg-white hover:bg-slate-100 text-[10px] font-bold text-slate-800 border border-slate-200 rounded-md flex items-center justify-center gap-1.5 transition">
                             <i class="ph ph-exclude"></i> 그룹해제
                         </button>
                     </div>
 
                     <!-- Common fill color -->
                     <div id="adv-common-color">
-                        <label class="text-[11px] text-slate-500 block mb-1">채우기 색상</label>
+                        <label class="text-[11px] text-slate-600 block mb-1">채우기 색상</label>
                         <input type="color" id="prop-color"
-                            class="w-full h-8 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0">
+                            class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
                     </div>
 
-                    <div id="adv-transform-controls" class="rounded-lg border border-blue-900/50 bg-slate-950/40 p-2.5">
-                        <label class="text-[11px] font-bold text-blue-200 block mb-1">회전 각도 (°)</label>
+                    <div id="adv-transform-controls" class="rounded-lg border border-blue-200 bg-blue-50/30 p-2.5">
+                        <label class="text-[11px] font-bold text-blue-900 block mb-1">회전 각도 (°)</label>
                         <input type="number" id="prop-rotation" min="-360" max="360" step="1" value="0"
-                            class="w-full p-1.5 bg-slate-800 border border-blue-700 text-slate-100 rounded text-xs text-center">
+                            class="w-full p-1.5 bg-white border border-blue-300 text-slate-900 rounded text-xs text-center">
                         <p class="mt-1.5 text-[10px] text-slate-500">텍스트, 이미지, 도형, 선, 표, 차트에 공통 적용</p>
                     </div>
 
                     <!-- Image-only photo editing controls -->
-                    <div id="adv-image-controls" class="space-y-3 rounded-lg border border-emerald-900/60 bg-slate-950/40 p-3" style="display: none;">
-                        <div class="flex items-center justify-between"><h5 class="text-xs font-bold text-emerald-200">이미지 편집</h5><button id="btn-image-reset" type="button" class="text-[10px] text-blue-300 hover:text-white">보정 초기화</button></div>
-                        <div class="grid grid-cols-2 gap-2"><button id="btn-image-replace" type="button" class="rounded border border-emerald-800 bg-emerald-950/40 py-2 text-[11px] font-bold text-emerald-100">사진 교체</button><button id="btn-image-background" type="button" class="rounded border border-slate-700 bg-slate-800 py-2 text-[11px] font-bold text-slate-200">슬라이드 배경으로</button></div>
+                    <div id="adv-image-controls" class="space-y-3 rounded-lg border border-emerald-200 bg-emerald-50/30 p-3" style="display: none;">
+                        <div class="flex items-center justify-between"><h5 class="text-xs font-bold text-emerald-900">이미지 편집</h5><button id="btn-image-reset" type="button" class="text-[10px] text-blue-600 hover:text-blue-800 font-semibold">보정 초기화</button></div>
+                        <div class="grid grid-cols-2 gap-2"><button id="btn-image-replace" type="button" class="rounded border border-emerald-300 bg-emerald-100/60 py-2 text-[11px] font-bold text-emerald-900 hover:bg-emerald-200">사진 교체</button><button id="btn-image-background" type="button" class="rounded border border-slate-200 bg-white py-2 text-[11px] font-bold text-slate-800 hover:bg-slate-50">슬라이드 배경으로</button></div>
                         <input id="image-replace-upload" type="file" accept="image/*" class="hidden">
-                        <div class="grid grid-cols-2 gap-2"><button id="btn-image-flip-x" type="button" class="rounded border border-slate-700 py-1.5 text-xs">좌우 뒤집기</button><button id="btn-image-flip-y" type="button" class="rounded border border-slate-700 py-1.5 text-xs">상하 뒤집기</button></div>
-                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">테두리 색상<input id="image-border-color" type="color" value="#000000" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label><label class="text-[10px] text-slate-400">테두리 두께<input id="image-border-width" type="number" min="0" max="100" value="0" class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-center text-xs"></label><label class="text-[10px] text-slate-400">이미지 배경색<input id="image-background-color" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label><label class="text-[10px] text-slate-400">색감 오버레이<input id="image-tint-color" type="color" value="#2563eb" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label></div>
-                        <label class="block text-[10px] text-slate-400">색감 강도 <span id="val-image-tint-opacity">0</span>%<input id="image-tint-opacity" type="range" min="0" max="100" value="0" class="mt-1 w-full accent-emerald-500"></label>
-                        <div class="rounded border border-slate-800 bg-slate-900/60 p-2.5 space-y-2"><div class="flex items-center justify-between"><span class="text-[11px] font-bold text-slate-300">자르기 · 확대/이동</span><button id="btn-image-crop-reset" type="button" class="text-[10px] text-blue-300">초기화</button></div><label class="block text-[10px] text-slate-400">확대 <span id="val-image-crop-scale">100</span>%<input id="image-crop-scale" type="range" min="100" max="300" value="100" class="mt-1 w-full accent-emerald-500"></label><div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">가로 이동<input id="image-crop-x" type="range" min="-100" max="100" value="0" class="mt-1 w-full accent-emerald-500"></label><label class="text-[10px] text-slate-400">세로 이동<input id="image-crop-y" type="range" min="-100" max="100" value="0" class="mt-1 w-full accent-emerald-500"></label></div></div>
-                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">밝기 <span id="val-image-brightness">100</span>%<input id="image-brightness" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-500"></label><label class="text-[10px] text-slate-400">대비 <span id="val-image-contrast">100</span>%<input id="image-contrast" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-500"></label><label class="text-[10px] text-slate-400">채도 <span id="val-image-saturation">100</span>%<input id="image-saturation" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-500"></label><label class="text-[10px] text-slate-400">블러 <span id="val-image-blur">0</span>px<input id="image-blur" type="range" min="0" max="30" value="0" class="mt-1 w-full accent-emerald-500"></label></div>
-                        <label class="block text-[10px] text-slate-400">색조 <span id="val-image-hue">0</span>°<input id="image-hue" type="range" min="-180" max="180" value="0" class="mt-1 w-full accent-emerald-500"></label>
-                        <div class="grid grid-cols-2 gap-2"><label class="flex items-center gap-2 text-[11px] text-slate-300"><input id="image-grayscale" type="checkbox"> 흑백</label><label class="flex items-center gap-2 text-[11px] text-slate-300"><input id="image-invert" type="checkbox"> 색상 반전</label></div>
-                        <div class="border-t border-slate-800 pt-3"><label class="flex items-center gap-2 text-[11px] text-slate-300"><input id="image-link-enabled" type="checkbox"> 링크 연결</label><input id="image-link-url" type="url" placeholder="https://..." class="mt-2 w-full rounded border border-slate-700 bg-slate-800 p-2 text-xs text-slate-100"></div>
+                        <div class="grid grid-cols-2 gap-2"><button id="btn-image-flip-x" type="button" class="rounded border border-slate-200 bg-white py-1.5 text-xs text-slate-700 hover:bg-slate-50">좌우 뒤집기</button><button id="btn-image-flip-y" type="button" class="rounded border border-slate-200 bg-white py-1.5 text-xs text-slate-700 hover:bg-slate-50">상하 뒤집기</button></div>
+                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">테두리 색상<input id="image-border-color" type="color" value="#000000" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label><label class="text-[10px] text-slate-600">테두리 두께<input id="image-border-width" type="number" min="0" max="100" value="0" class="mt-1 w-full rounded border border-slate-200 bg-slate-50 p-1.5 text-center text-xs"></label><label class="text-[10px] text-slate-600">이미지 배경색<input id="image-background-color" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label><label class="text-[10px] text-slate-600">색감 오버레이<input id="image-tint-color" type="color" value="#2563eb" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label></div>
+                        <label class="block text-[10px] text-slate-600">색감 강도 <span id="val-image-tint-opacity">0</span>%<input id="image-tint-opacity" type="range" min="0" max="100" value="0" class="mt-1 w-full accent-emerald-600"></label>
+                        <div class="rounded border border-slate-200 bg-white p-2.5 space-y-2"><div class="flex items-center justify-between"><span class="text-[11px] font-bold text-slate-800">자르기 · 확대/이동</span><button id="btn-image-crop-reset" type="button" class="text-[10px] text-blue-600 font-semibold">초기화</button></div><label class="block text-[10px] text-slate-600">확대 <span id="val-image-crop-scale">100</span>%<input id="image-crop-scale" type="range" min="100" max="300" value="100" class="mt-1 w-full accent-emerald-600"></label><div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">가로 이동<input id="image-crop-x" type="range" min="-100" max="100" value="0" class="mt-1 w-full accent-emerald-600"></label><label class="text-[10px] text-slate-600">세로 이동<input id="image-crop-y" type="range" min="-100" max="100" value="0" class="mt-1 w-full accent-emerald-600"></label></div></div>
+                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">밝기 <span id="val-image-brightness">100</span>%<input id="image-brightness" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-600"></label><label class="text-[10px] text-slate-600">대비 <span id="val-image-contrast">100</span>%<input id="image-contrast" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-600"></label><label class="text-[10px] text-slate-600">채도 <span id="val-image-saturation">100</span>%<input id="image-saturation" type="range" min="0" max="200" value="100" class="mt-1 w-full accent-emerald-600"></label><label class="text-[10px] text-slate-600">블러 <span id="val-image-blur">0</span>px<input id="image-blur" type="range" min="0" max="30" value="0" class="mt-1 w-full accent-emerald-600"></label></div>
+                        <label class="block text-[10px] text-slate-600">색조 <span id="val-image-hue">0</span>°<input id="image-hue" type="range" min="-180" max="180" value="0" class="mt-1 w-full accent-emerald-600"></label>
+                        <div class="grid grid-cols-2 gap-2"><label class="flex items-center gap-2 text-[11px] text-slate-700"><input id="image-grayscale" type="checkbox"> 흑백</label><label class="flex items-center gap-2 text-[11px] text-slate-700"><input id="image-invert" type="checkbox"> 색상 반전</label></div>
+                        <div class="border-t border-slate-200 pt-3"><label class="flex items-center gap-2 text-[11px] text-slate-700"><input id="image-link-enabled" type="checkbox"> 링크 연결</label><input id="image-link-url" type="url" placeholder="https://..." class="mt-2 w-full rounded border border-slate-200 bg-slate-50 p-2 text-xs text-slate-900 focus:bg-white"></div>
                     </div>
 
                     <div id="adv-effects-controls"
-                        class="space-y-3 rounded-lg border border-slate-700 bg-slate-950/40 p-3">
+                        class="space-y-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
                         <div class="flex items-center justify-between"><label
-                                class="flex items-center gap-2 text-xs font-bold text-slate-200"><input
+                                class="flex items-center gap-2 text-xs font-bold text-slate-800"><input
                                     id="chk-element-shadow" type="checkbox"> 그림자</label><button
                                 id="btn-element-shadow-reset" type="button"
-                                class="text-[10px] text-blue-300 hover:text-white">해제</button></div>
-                        <div class="grid grid-cols-3 gap-2"><label class="text-[10px] text-slate-400">가로<input
+                                class="text-[10px] text-blue-600 hover:text-blue-800 font-semibold">해제</button></div>
+                        <div class="grid grid-cols-3 gap-2"><label class="text-[10px] text-slate-600">가로<input
                                     id="prop-shadow-x" type="number" value="4"
-                                    class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-center text-xs"></label><label
-                                class="text-[10px] text-slate-400">세로<input id="prop-shadow-y" type="number" value="4"
-                                    class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-center text-xs"></label><label
-                                class="text-[10px] text-slate-400">블러<input id="prop-shadow-blur" type="number" min="0"
+                                    class="mt-1 w-full rounded border border-slate-200 bg-white p-1.5 text-center text-xs"></label><label
+                                class="text-[10px] text-slate-600">세로<input id="prop-shadow-y" type="number" value="4"
+                                    class="mt-1 w-full rounded border border-slate-200 bg-white p-1.5 text-center text-xs"></label><label
+                                class="text-[10px] text-slate-600">블러<input id="prop-shadow-blur" type="number" min="0"
                                     value="8"
-                                    class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-center text-xs"></label>
+                                    class="mt-1 w-full rounded border border-slate-200 bg-white p-1.5 text-center text-xs"></label>
                         </div>
-                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">그림자 색상<input
+                        <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">그림자 색상<input
                                     id="prop-shadow-color" type="color" value="#000000"
-                                    class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label><label
-                                class="text-[10px] text-slate-400">그림자 불투명도 <span
+                                    class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label><label
+                                class="text-[10px] text-slate-600">그림자 불투명도 <span
                                     id="val-shadow-opacity">40</span>%<input id="prop-shadow-opacity" type="range"
-                                    min="0" max="100" value="40" class="mt-2 w-full accent-blue-500"></label></div>
-                        <label class="block text-[10px] text-slate-400">요소 불투명도 <span
+                                    min="0" max="100" value="40" class="mt-2 w-full accent-blue-600"></label></div>
+                        <label class="block text-[10px] text-slate-600">요소 불투명도 <span
                                 id="val-element-opacity">100</span>%<input id="prop-opacity" type="range" min="0"
-                                max="100" value="100" class="mt-2 w-full accent-blue-500"></label>
+                                max="100" value="100" class="mt-2 w-full accent-blue-600"></label>
                     </div>
 
                     <div id="template-slot-controls"
-                        class="hidden space-y-2 rounded-lg border border-violet-800/60 bg-violet-950/20 p-3">
-                        <label class="text-[11px] font-bold text-violet-300 block">템플릿 요소 설정</label>
+                        class="hidden space-y-2 rounded-lg border border-purple-200 bg-purple-50/40 p-3">
+                        <label class="text-[11px] font-bold text-purple-900 block">템플릿 요소 설정</label>
                         <select id="template-role"
-                            class="w-full p-2 bg-slate-800 border border-slate-700 rounded text-xs text-slate-200">
+                            class="w-full p-2 bg-white border border-purple-200 rounded text-xs text-slate-800">
                             <option value="">일반 요소</option>
                             <option value="headline">제목</option>
                             <option value="body">본문</option>
@@ -1064,22 +1066,22 @@
                             <option value="district">선거구</option>
                             <option value="background_decoration">배경 장식</option>
                         </select>
-                        <label class="flex items-center gap-2 text-[11px] text-slate-300"><input id="template-locked"
+                        <label class="flex items-center gap-2 text-[11px] text-slate-700"><input id="template-locked"
                                 type="checkbox"> 이 요소 잠금</label>
                     </div>
 
                     <!-- Text modifications properties list -->
                     <div id="adv-text-controls" class="space-y-4" style="display: none;">
-                        <div class="rounded-lg border border-slate-800 bg-slate-950/40 p-2.5">
-                            <div><label class="text-[11px] text-slate-400 block mb-1">글자크기 (px)</label><input
+                        <div class="rounded-lg border border-slate-200 bg-slate-50 p-2.5">
+                            <div><label class="text-[11px] text-slate-600 block mb-1">글자크기 (px)</label><input
                                     type="number" id="adv-size"
-                                    class="w-full p-1.5 bg-slate-800 border border-slate-700 text-slate-200 rounded text-xs text-center">
+                                    class="w-full p-1.5 bg-white border border-slate-200 text-slate-900 rounded text-xs text-center">
                             </div>
                         </div>
                         <div id="adv-common-font">
-                            <label class="text-[11px] text-slate-500 block mb-1">글꼴 / 서체</label>
+                            <label class="text-[11px] text-slate-600 block mb-1">글꼴 / 서체</label>
                             <select id="prop-font-family"
-                                class="w-full p-2 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 cursor-pointer focus:outline-none focus:border-blue-500">
+                                class="w-full p-2 bg-slate-50 border border-slate-200 rounded text-xs text-slate-800 cursor-pointer focus:outline-none focus:border-blue-500 focus:bg-white">
                                 <option value="Pretendard">Pretendard (기본)</option>
                                 <option value="Arial">Arial (System)</option>
                                 <option value="Times New Roman">Times New Roman (Serif)</option>
@@ -1098,61 +1100,61 @@
                                         class="ph-bold ph-text-align-right text-sm"></i></button>
                                 <button class="align-btn" data-align="justify" title="양쪽 맞춤"><i
                                         class="ph-bold ph-text-align-justify text-sm"></i></button>
-                                <div class="w-px bg-slate-800 mx-1"></div>
+                                <div class="w-px bg-slate-200 mx-1"></div>
                                 <button id="adv-bold"
-                                    class="flex-1 py-1 border border-slate-700 rounded text-xs font-bold hover:bg-slate-800"
+                                    class="flex-1 py-1 border border-slate-200 bg-white rounded text-xs font-bold hover:bg-slate-50 text-slate-800"
                                     title="굵게">B</button>
                                 <button id="adv-italic"
-                                    class="flex-1 py-1 border border-slate-700 rounded text-xs italic font-serif hover:bg-slate-800"
+                                    class="flex-1 py-1 border border-slate-200 bg-white rounded text-xs italic font-serif hover:bg-slate-50 text-slate-800"
                                     title="기울임">I</button>
                                 <button id="adv-underline"
-                                    class="flex-1 py-1 border border-slate-700 rounded text-xs underline hover:bg-slate-800"
+                                    class="flex-1 py-1 border border-slate-200 bg-white rounded text-xs underline hover:bg-slate-50 text-slate-800"
                                     title="밑줄">U</button>
                             </div>
                         </div>
 
                         <!-- Character settings -->
                         <div class="grid grid-cols-3 gap-2">
-                            <div><label class="text-[10px] text-slate-500 flex justify-between">자간 <span
+                            <div><label class="text-[10px] text-slate-600 flex justify-between">자간 <span
                                         id="val-spacing">0</span></label><input type="range" id="adv-spacing" min="-10"
-                                    max="35" value="0" class="w-full accent-blue-500"></div>
-                            <div><label class="text-[10px] text-slate-500 flex justify-between">행간 <span
+                                     max="35" value="0" class="w-full accent-blue-600"></div>
+                            <div><label class="text-[10px] text-slate-600 flex justify-between">행간 <span
                                         id="val-lineheight">1.3</span></label><input type="range" id="adv-lineheight"
-                                    min="0.5" max="3" step="0.1" value="1.3" class="w-full accent-blue-500"></div>
-                            <div><label class="text-[10px] text-slate-500 flex justify-between">장평 <span
+                                     min="0.5" max="3" step="0.1" value="1.3" class="w-full accent-blue-600"></div>
+                            <div><label class="text-[10px] text-slate-600 flex justify-between">장평 <span
                                         id="val-scale">100</span></label><input type="range" id="adv-scale" min="50"
-                                    max="150" value="100" class="w-full accent-blue-500"></div>
+                                     max="150" value="100" class="w-full accent-blue-600"></div>
                         </div>
 
-                        <div class="w-full h-px bg-slate-800 my-2"></div>
+                        <div class="w-full h-px bg-slate-200 my-2"></div>
 
                         <!-- Advanced effects outlines, shadows -->
-                        <div class="space-y-3.5 bg-slate-950/30 p-3 rounded-lg border border-slate-800/40">
-                            <h5 class="text-[11px] font-bold text-slate-400">텍스트 특수 효과</h5>
+                        <div class="space-y-3.5 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <h5 class="text-[11px] font-bold text-slate-700">텍스트 특수 효과</h5>
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-semibold text-slate-300 flex items-center gap-2"><input
+                                <label class="text-xs font-semibold text-slate-800 flex items-center gap-2"><input
                                         type="checkbox" id="chk-bg"> 글자 배경형광펜</label>
                                 <input type="color" id="color-bg" value="#fef08a"
                                     class="w-6 h-6 border-0 bg-transparent p-0 cursor-pointer">
                             </div>
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-semibold text-slate-300 flex items-center gap-2"><input
+                                <label class="text-xs font-semibold text-slate-800 flex items-center gap-2"><input
                                         type="checkbox" id="chk-outline"> 윤곽선 테두리</label>
                                 <div class="flex gap-1.5"><input type="number" id="val-outline" value="2"
-                                        class="w-10 text-xs border border-slate-700 bg-slate-800 text-center rounded p-1"><input
+                                        class="w-10 text-xs border border-slate-200 bg-white text-center rounded p-1"><input
                                         type="color" id="color-outline" value="#000000"
                                         class="w-6 h-6 border-0 bg-transparent p-0 cursor-pointer"></div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-semibold text-slate-300 flex items-center gap-2"><input
+                                <label class="text-xs font-semibold text-slate-800 flex items-center gap-2"><input
                                         type="checkbox" id="chk-double"> 이중 윤곽선</label>
                                 <div class="flex gap-1.5"><input type="number" id="val-double" value="5"
-                                        class="w-10 text-xs border border-slate-700 bg-slate-800 text-center rounded p-1"><input
+                                        class="w-10 text-xs border border-slate-200 bg-white text-center rounded p-1"><input
                                         type="color" id="color-double" value="#ffffff"
                                         class="w-6 h-6 border-0 bg-transparent p-0 cursor-pointer"></div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-semibold text-slate-300 flex items-center gap-2"><input
+                                <label class="text-xs font-semibold text-slate-800 flex items-center gap-2"><input
                                         type="checkbox" id="chk-shadow"> 텍스트 그림자</label>
                                 <input type="color" id="color-shadow" value="#000000"
                                     class="w-6 h-6 border-0 bg-transparent p-0 cursor-pointer">
@@ -1162,138 +1164,171 @@
 
                     <!-- Shape modifications properties list -->
                     <div id="adv-shape-controls" class="space-y-4" style="display: none;">
-                        <div id="shape-fill-controls" class="rounded-lg border border-violet-900/60 bg-slate-950/40 p-3 space-y-2.5">
-                            <div class="flex items-center justify-between"><label class="text-xs font-bold text-violet-200">도형 채우기</label><select id="shape-fill-type" class="rounded border border-slate-700 bg-slate-800 px-2 py-1 text-[11px] text-slate-200"><option value="solid">단색</option><option value="gradient">그라데이션</option></select></div>
+                        <div id="shape-fill-controls" class="rounded-lg border border-purple-200 bg-purple-50/30 p-3 space-y-2.5">
+                            <div class="flex items-center justify-between"><label class="text-xs font-bold text-purple-900">도형 채우기</label><select id="shape-fill-type" class="rounded border border-slate-200 bg-white px-2 py-1 text-[11px] text-slate-800"><option value="solid">단색</option><option value="gradient">그라데이션</option></select></div>
                             <div id="shape-gradient-controls" class="hidden space-y-2">
-                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">시작 색상<input id="shape-gradient-color-1" type="color" value="#3b82f6" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label><label class="text-[10px] text-slate-400">끝 색상<input id="shape-gradient-color-2" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label></div>
-                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">방식<select id="shape-gradient-type" class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-xs text-slate-200"><option value="linear">선형</option><option value="radial">방사형</option></select></label><label id="shape-gradient-angle-wrap" class="text-[10px] text-slate-400">각도 <span id="shape-gradient-angle-value">0</span>°<input id="shape-gradient-angle" type="range" min="0" max="360" value="0" class="mt-1 w-full accent-violet-500"></label></div>
+                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">시작 색상<input id="shape-gradient-color-1" type="color" value="#3b82f6" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label><label class="text-[10px] text-slate-600">끝 색상<input id="shape-gradient-color-2" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label></div>
+                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">방식<select id="shape-gradient-type" class="mt-1 w-full rounded border border-slate-200 bg-white p-1.5 text-xs text-slate-800"><option value="linear">선형</option><option value="radial">방사형</option></select></label><label id="shape-gradient-angle-wrap" class="text-[10px] text-slate-600">각도 <span id="shape-gradient-angle-value">0</span>°<input id="shape-gradient-angle" type="range" min="0" max="360" value="0" class="mt-1 w-full accent-purple-600"></label></div>
                             </div>
                         </div>
-                        <div id="shape-stroke-gradient-controls" class="rounded-lg border border-cyan-900/60 bg-slate-950/40 p-3 space-y-2.5">
-                            <div class="flex items-center justify-between"><label class="text-xs font-bold text-cyan-200">윤곽선 색상</label><select id="shape-stroke-fill-type" class="rounded border border-slate-700 bg-slate-800 px-2 py-1 text-[11px] text-slate-200"><option value="solid">단색</option><option value="gradient">그라데이션</option></select></div>
+                        <div id="shape-stroke-gradient-controls" class="rounded-lg border border-cyan-200 bg-cyan-50/30 p-3 space-y-2.5">
+                            <div class="flex items-center justify-between"><label class="text-xs font-bold text-cyan-900">윤곽선 색상</label><select id="shape-stroke-fill-type" class="rounded border border-slate-200 bg-white px-2 py-1 text-[11px] text-slate-800"><option value="solid">단색</option><option value="gradient">그라데이션</option></select></div>
                             <div id="shape-stroke-gradient-options" class="hidden space-y-2">
-                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">시작 색상<input id="shape-stroke-gradient-color-1" type="color" value="#000000" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label><label class="text-[10px] text-slate-400">끝 색상<input id="shape-stroke-gradient-color-2" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-700 bg-slate-900"></label></div>
-                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-400">방식<select id="shape-stroke-gradient-type" class="mt-1 w-full rounded border border-slate-700 bg-slate-800 p-1.5 text-xs text-slate-200"><option value="linear">선형</option><option value="radial">방사형</option></select></label><label id="shape-stroke-gradient-angle-wrap" class="text-[10px] text-slate-400">각도 <span id="shape-stroke-gradient-angle-value">0</span>°<input id="shape-stroke-gradient-angle" type="range" min="0" max="360" value="0" class="mt-1 w-full accent-cyan-500"></label></div>
+                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">시작 색상<input id="shape-stroke-gradient-color-1" type="color" value="#000000" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label><label class="text-[10px] text-slate-600">끝 색상<input id="shape-stroke-gradient-color-2" type="color" value="#ffffff" class="mt-1 h-8 w-full rounded border border-slate-200 bg-white"></label></div>
+                                <div class="grid grid-cols-2 gap-2"><label class="text-[10px] text-slate-600">방식<select id="shape-stroke-gradient-type" class="mt-1 w-full rounded border border-slate-200 bg-white p-1.5 text-xs text-slate-800"><option value="linear">선형</option><option value="radial">방사형</option></select></label><label id="shape-stroke-gradient-angle-wrap" class="text-[10px] text-slate-600">각도 <span id="shape-stroke-gradient-angle-value">0</span>°<input id="shape-stroke-gradient-angle" type="range" min="0" max="360" value="0" class="mt-1 w-full accent-cyan-600"></label></div>
                             </div>
                         </div>
-                        <div class="w-full h-px bg-slate-800 my-2"></div>
-                        <h5 class="text-xs font-bold text-slate-400 border-b border-slate-800 pb-1.5">도형 테두리 설정</h5>
+                        <div class="w-full h-px bg-slate-200 my-2"></div>
+                        <h5 class="text-xs font-bold text-slate-700 border-b border-slate-200 pb-1.5">도형 테두리 설정</h5>
                         <div class="flex gap-2">
                             <div class="flex-1">
-                                <label class="text-[11px] text-slate-500 block mb-1">테두리 색상</label>
+                                <label class="text-[11px] text-slate-600 block mb-1">테두리 색상</label>
                                 <input type="color" id="prop-shape-stroke-color" value="#000000"
-                                    class="w-full h-8 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0">
+                                    class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
                             </div>
                             <div class="flex-1">
-                                <label class="text-[11px] text-slate-500 block mb-1">테두리 두께 (px)</label>
+                                <label class="text-[11px] text-slate-600 block mb-1">테두리 두께 (px)</label>
                                 <input type="number" id="prop-shape-stroke-width" min="0" max="50" value="0"
-                                    class="w-full p-1.5 bg-slate-800 border border-slate-700 text-slate-200 rounded text-xs text-center">
+                                    class="w-full p-1.5 bg-slate-50 border border-slate-200 text-slate-900 rounded text-xs text-center">
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-2">
                             <div>
-                                <label class="text-[11px] text-slate-500 block mb-1">둥글기 (Radius)</label>
+                                <label class="text-[11px] text-slate-600 block mb-1">둥글기 (Radius)</label>
                                 <input type="number" id="prop-shape-border-radius" min="0" max="200" value="0"
-                                    class="w-full p-1.5 bg-slate-800 border border-slate-700 text-slate-200 rounded text-xs text-center">
+                                    class="w-full p-1.5 bg-slate-50 border border-slate-200 text-slate-900 rounded text-xs text-center">
                             </div>
                             <div>
-                                <label class="text-[11px] text-slate-500 block mb-1">투명도 (Opacity)</label>
+                                <label class="text-[11px] text-slate-600 block mb-1">투명도 (Opacity)</label>
                                 <input type="range" id="prop-shape-opacity" min="0" max="1" step="0.05" value="1"
-                                    class="w-full accent-blue-500 mt-2">
+                                    class="w-full accent-blue-600 mt-2">
                             </div>
                         </div>
                     </div>
 
                     <!-- Interactive charts right side modifications details form -->
                     <div id="adv-chart-controls" class="space-y-4" style="display: none;">
-                        <h5 class="text-xs font-bold text-slate-400 border-b border-slate-800 pb-1.5">차트 데이터 수정</h5>
+                        <h5 class="text-xs font-bold text-slate-700 border-b border-slate-200 pb-1.5">차트 데이터 수정</h5>
                         <div id="chart-data-grid" class="space-y-1.5 max-h-48 overflow-y-auto pr-1">
                             <!-- chart rows inputs -->
                         </div>
                         <button id="chart-add-row"
-                            class="w-full py-1.5 border border-dashed border-slate-700 rounded-lg text-xs hover:bg-slate-800 flex items-center justify-center gap-1"><i
+                            class="w-full py-1.5 border border-dashed border-slate-300 rounded-lg text-xs hover:bg-slate-50 flex items-center justify-center gap-1 text-slate-700"><i
                                 class="ph ph-plus"></i> 데이터 행 추가</button>
                     </div>
 
                     <!-- Editable tables right sidebar layout adjustments form -->
                     <div id="adv-table-controls" class="space-y-4" style="display: none;">
-                        <h5 class="text-xs font-bold text-slate-400 border-b border-slate-800 pb-1.5">표 레이아웃 조절</h5>
+                        <h5 class="text-xs font-bold text-slate-700 border-b border-slate-200 pb-1.5">표 레이아웃 조절</h5>
                         <div class="grid grid-cols-2 gap-2">
                             <button id="table-add-row"
-                                class="py-1.5 border border-slate-700 rounded text-xs bg-slate-800 hover:bg-slate-700 flex items-center justify-center gap-1 transition"><i
+                                class="py-1.5 border border-slate-200 rounded text-xs bg-slate-50 hover:bg-slate-100 flex items-center justify-center gap-1 transition text-slate-800"><i
                                     class="ph ph-plus"></i> 행 추가</button>
                             <button id="table-del-row"
-                                class="py-1.5 border border-slate-700 rounded text-xs bg-slate-800 hover:bg-slate-700 flex items-center justify-center gap-1 text-red-400 transition"><i
+                                class="py-1.5 border border-slate-200 rounded text-xs bg-slate-50 hover:bg-slate-100 flex items-center justify-center gap-1 text-red-600 transition"><i
                                     class="ph ph-minus"></i> 행 삭제</button>
                             <button id="table-add-col"
-                                class="py-1.5 border border-slate-700 rounded text-xs bg-slate-800 hover:bg-slate-700 flex items-center justify-center gap-1 transition"><i
+                                class="py-1.5 border border-slate-200 rounded text-xs bg-slate-50 hover:bg-slate-100 flex items-center justify-center gap-1 transition text-slate-800"><i
                                     class="ph ph-plus"></i> 열 추가</button>
                             <button id="table-del-col"
-                                class="py-1.5 border border-slate-700 rounded text-xs bg-slate-800 hover:bg-slate-700 flex items-center justify-center gap-1 text-red-400 transition"><i
+                                class="py-1.5 border border-slate-200 rounded text-xs bg-slate-50 hover:bg-slate-100 flex items-center justify-center gap-1 text-red-600 transition"><i
                                     class="ph ph-minus"></i> 열 삭제</button>
                         </div>
                         <div class="pt-2">
-                            <label class="text-[11px] text-slate-500 block mb-1">선택된 셀 배경색 변경</label>
+                            <label class="text-[11px] text-slate-600 block mb-1">선택된 셀 배경색 변경</label>
                             <input type="color" id="table-cell-color" value="#ffffff"
-                                class="w-full h-8 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0">
+                                class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
                         </div>
-                        <div class="pt-2 border-t border-slate-800">
-                            <label class="text-[11px] text-slate-500 block mb-1">선택된 셀 텍스트 수정</label>
-                            <textarea id="table-cell-text" class="w-full text-xs bg-slate-800 border border-slate-700 rounded p-2 text-slate-100 focus:outline-none focus:border-blue-500" rows="3" placeholder="셀 텍스트 입력"></textarea>
+                        <div class="pt-2 border-t border-slate-200">
+                            <label class="text-[11px] text-slate-600 block mb-1">선택된 셀 텍스트 수정</label>
+                            <textarea id="table-cell-text" class="w-full text-xs bg-slate-50 border border-slate-200 rounded p-2 text-slate-900 focus:outline-none focus:border-blue-500 focus:bg-white" rows="3" placeholder="셀 텍스트 입력"></textarea>
                         </div>
-                        <div class="space-y-2 pt-2 border-t border-slate-800">
-                            <label class="text-[11px] text-slate-500 block">표 윤곽선 및 셀 경계선</label>
+                        <div class="space-y-2 pt-2 border-t border-slate-200">
+                            <label class="text-[11px] text-slate-600 block">표 윤곽선 및 셀 경계선</label>
                             <div class="grid grid-cols-2 gap-2">
                                 <select id="table-border-style"
-                                    class="p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-200">
+                                    class="p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-800">
                                     <option value="solid">실선</option>
                                     <option value="dashed">파선</option>
                                     <option value="dotted">점선</option>
                                 </select>
                                 <input type="color" id="table-border-color" value="#cbd5e1" title="윤곽선 색상"
-                                    class="h-8 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0">
+                                    class="h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
                             </div>
                             <div class="grid grid-cols-3 gap-2">
-                                <label class="text-[10px] text-slate-500">두께<input id="table-border-width" type="number"
+                                <label class="text-[10px] text-slate-600">두께<input id="table-border-width" type="number"
                                         min="0.5" max="24" step="0.5" value="1"
-                                        class="mt-1 w-full p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-center text-slate-200"></label>
-                                <label class="text-[10px] text-slate-500">점/선 길이<input id="table-dash-length"
+                                        class="mt-1 w-full p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-center text-slate-900"></label>
+                                <label class="text-[10px] text-slate-600">점/선 길이<input id="table-dash-length"
                                         type="number" min="1" max="100" value="8"
-                                        class="mt-1 w-full p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-center text-slate-200"></label>
-                                <label class="text-[10px] text-slate-500">간격<input id="table-dash-gap" type="number"
+                                        class="mt-1 w-full p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-center text-slate-900"></label>
+                                <label class="text-[10px] text-slate-600">간격<input id="table-dash-gap" type="number"
                                         min="1" max="100" value="5"
-                                        class="mt-1 w-full p-1.5 bg-slate-800 border border-slate-700 rounded text-xs text-center text-slate-200"></label>
+                                        class="mt-1 w-full p-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-center text-slate-900"></label>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Page background configurations (always visible bottom section) -->
-                <div id="page-background-controls" class="space-y-4 pt-4 border-t border-slate-800">
-                    <h5 class="text-xs font-extrabold text-slate-400">슬라이드 배경 설정</h5>
+                <div id="page-background-controls" class="space-y-4 pt-4 border-t border-slate-200">
+                    <h5 class="text-xs font-extrabold text-slate-800">슬라이드 배경 설정</h5>
                     <div class="flex gap-2">
                         <button id="bg-type-solid"
-                            class="flex-1 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-xs text-slate-200 font-bold transition">단색</button>
+                            class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded text-xs text-slate-800 font-bold transition">단색</button>
                         <button id="bg-type-gradient"
-                            class="flex-1 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-xs text-slate-200 font-bold transition">그라디언트</button>
+                            class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded text-xs text-slate-800 font-bold transition">그라디언트</button>
                     </div>
                     <div class="relative">
                         <input type="file" id="page-bg-upload" accept="image/*"
                             class="absolute inset-0 opacity-0 cursor-pointer">
                         <button
-                            class="w-full py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-xs text-slate-200 font-bold transition flex items-center justify-center gap-1.5"><i
+                            class="w-full py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded text-xs text-slate-800 font-bold transition flex items-center justify-center gap-1.5"><i
                                 class="ph ph-image"></i> 배경 이미지 적용</button>
                     </div>
                     <div class="grid grid-cols-2 gap-2">
-                        <button id="btn-page-bg-clear" type="button" class="rounded border border-slate-700 bg-slate-800 py-2 text-xs font-bold text-slate-200">배경 사진 해제</button>
-                        <button id="btn-page-bg-return-source" type="button" class="rounded border border-blue-800 bg-blue-950/30 py-2 text-xs font-bold text-blue-100">이미지 편집으로 돌아가기</button>
-                        <button id="btn-page-bg-copy" type="button" class="rounded border border-slate-700 py-2 text-xs text-slate-300">배경 복사</button>
-                        <button id="btn-page-bg-paste" type="button" class="rounded border border-slate-700 py-2 text-xs text-slate-300">배경 붙여넣기</button>
+                        <button id="btn-page-bg-clear" type="button" class="rounded border border-slate-200 bg-slate-100 hover:bg-slate-200 py-2 text-xs font-bold text-slate-800">배경 사진 해제</button>
+                        <button id="btn-page-bg-return-source" type="button" class="rounded border border-blue-300 bg-blue-50 hover:bg-blue-100 py-2 text-xs font-bold text-blue-700">이미지 편집으로 돌아가기</button>
+                        <button id="btn-page-bg-copy" type="button" class="rounded border border-slate-200 bg-white hover:bg-slate-50 py-2 text-xs text-slate-700">배경 복사</button>
+                        <button id="btn-page-bg-paste" type="button" class="rounded border border-slate-200 bg-white hover:bg-slate-50 py-2 text-xs text-slate-700">배경 붙여넣기</button>
                     </div>
                     <div class="flex gap-2 pt-1">
                         <div class="flex-1">
-                            <label class="text-[10px] text-slate-500 block mb-1">기본 배경색</label>
+                            <label class="text-[10px] text-slate-600 block mb-1">기본 배경색</label>
                             <input type="color" id="page-bg-color1" value="#ffffff"
+                                class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
+                        </div>
+                        <div class="flex-1">
+                            <label class="text-[10px] text-slate-600 block mb-1">그라데이션색</label>
+                            <input type="color" id="page-bg-color2" value="#eff6ff"
+                                class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
+                        </div>
+                    </div>
+                    <div class="pt-1">
+                        <label class="text-[10px] text-slate-600 block mb-1">작업 여백 배경색 <span
+                                class="text-slate-400">(다운로드 제외)</span></label>
+                        <input type="color" id="workspace-bg-color" value="#f1f5f9"
+                            class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
+                    </div>
+                    <div class="w-full h-px bg-slate-200 my-2"></div>
+                    <div class="space-y-3 pt-1">
+                        <label class="text-[11px] text-slate-600 block font-semibold">배경 액자 테두리 설정</label>
+                        <div class="flex gap-2">
+                            <div class="flex-1">
+                                <label class="text-[10px] text-slate-600 block mb-1">테두리 색상</label>
+                                <input type="color" id="page-bg-stroke-color" value="#000000"
+                                    class="w-full h-8 rounded border border-slate-200 bg-white cursor-pointer p-0">
+                            </div>
+                            <div class="flex-1">
+                                <label class="text-[10px] text-slate-600 block mb-1">테두리 두께 (px)</label>
+                                <input type="number" id="page-bg-stroke-width" min="0" max="100" value="0"
+                                    class="w-full p-1.5 bg-slate-50 border border-slate-200 text-slate-900 rounded text-xs text-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>nput type="color" id="page-bg-color1" value="#ffffff"
                                 class="w-full h-8 rounded border border-slate-700 bg-slate-900 cursor-pointer p-0">
                         </div>
                         <div class="flex-1">
